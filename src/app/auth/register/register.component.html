@@ -1,0 +1,186 @@
+<mat-card>
+      <mat-card-title>
+    <div class="avatar">
+    </div>
+
+  </mat-card-title>
+  <mat-card-title>
+    <span>Register </span>
+  </mat-card-title>
+
+  <mat-card-content>
+
+  <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>
+        <mat-icon>person</mat-icon> Username
+      </mat-label>
+      <input matInput type="text" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel" />
+      <mat-error *ngIf="username.errors && f.submitted">
+        <div *ngIf="username.errors?.['required']">Username is required</div>
+        <div *ngIf="username.errors?.['minlength']">
+          Username must be at least 3 characters
+        </div>
+        <div *ngIf="username.errors?.['maxlength']">
+          Username must be at most 20 characters
+        </div>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>
+        <mat-icon>email</mat-icon> Email
+      </mat-label>
+      <input matInput type="email" name="email" [(ngModel)]="form.email" required email #email="ngModel" />
+      <mat-error *ngIf="email.errors && f.submitted">
+        <div *ngIf="email.errors?.['required']">Email is required</div>
+        <div *ngIf="email.errors?.['email']">
+          Email must be a valid email address
+        </div>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>
+        <mat-icon>lock</mat-icon> Password
+      </mat-label>
+      <input matInput type="password" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel" />
+      <mat-error *ngIf="password.errors && f.submitted">
+        <div *ngIf="password.errors?.['required']">Password is required</div>
+        <div *ngIf="password.errors?.['required']">
+          Password must be at least 6 characters
+        </div>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="button">
+      <button type="submit" mat-button>Register</button>
+    </div>
+    <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
+      Signup failed!<br />{{ errorMessage }}
+    </div>
+  </form>
+</mat-card-content>
+
+  <div *ngIf="isSuccessful" class="alert alert-success">
+    Your registration is successful!
+  </div>
+
+</mat-card>
+
+<!-- //code sau -->
+<!-- <mat-card>
+  <mat-card-title>
+    <div class="avatar">
+    </div>
+  </mat-card-title>
+  <mat-card-title>
+    <span>Đăng ký</span>
+  </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="RegisterComponent" (ngSubmit)="register()" name="form" #f="ngForm" novalidate>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>
+          <mat-icon>person</mat-icon> Tên
+        </mat-label>
+        <input matInput type="text" id="ten" formControlName="ten" required>
+        <mat-error *ngIf="RegisterComponent.controls['ten'].errors && f.submitted">
+          <div *ngIf="RegisterComponent.controls['ten'].errors.required">Tên là bắt buộc</div>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>
+          <mat-icon>person</mat-icon> Giới tính
+        </mat-label>
+        <input matInput type="text" id="gioiTinh" formControlName="gioiTinh" required>
+        <mat-error *ngIf="RegisterComponent.controls['gioiTinh'].errors && f.submitted">
+          <div *ngIf="RegisterComponent.controls['gioiTinh'].errors.required">Giới tính là bắt buộc</div>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>
+          <mat-icon>person</mat-icon> Ngày sinh
+        </mat-label>
+        <input matInput type="text" id="ngaySinh" formControlName="ngaySinh" required>
+        <mat-error *ngIf="RegisterComponent.controls['ngaySinh'].errors && f.submitted">
+          <div *ngIf="RegisterComponent.controls['ngaySinh'].errors.required">Ngày sinh là bắt buộc</div>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>
+          <mat-icon>person</mat-icon> Số điện thoại
+        </mat-label>
+        <input matInput type="text" id="soDienThoai" formControlName="soDienThoai" required>
+        <mat-error *ngIf="RegisterComponent.controls['soDienThoai'].errors && f.submitted">
+          <div *ngIf="RegisterComponent.controls['soDienThoai'].errors.required">Số điện thoại là bắt buộc</div>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>
+          <mat-icon>person</mat-icon> Địa chỉ
+        </mat-label>
+        <input matInput type="text" id="diaChi" formControlName="diaChi" required>
+        <mat-error *ngIf="RegisterComponent.controls['diaChi'].errors && f.submitted">
+          <div *ngIf="RegisterComponent.controls['diaChi'].errors.required">Địa chỉ là bắt buộc</div>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>
+          <mat-icon>email</mat-icon> Email
+        </mat-label>
+        <input matInput type="email" id="email" formControlName="email" required>
+        <mat-error *ngIf="RegisterComponent.controls['email'].errors && f.submitted">
+          <div *ngIf="RegisterComponent.controls['email'].errors.required">Email là bắt buộc</div>
+          <div *ngIf="RegisterComponent.controls['email'].errors.email">Email phải là một địa chỉ email hợp lệ</div>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>
+          <mat-icon>person</mat-icon> Tài khoản
+        </mat-label>
+        <input matInput type="text" id="taiKhoan" formControlName="taiKhoan" required>
+        <mat-error *ngIf="RegisterComponent.controls['taiKhoan'].errors && f.submitted">
+          <div *ngIf="RegisterComponent.controls['taiKhoan'].errors.required">Tài khoản là bắt buộc</div>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>
+          <mat-icon>lock</mat-icon> Mật khẩu
+        </mat-label>
+        <input matInput type="password" id="matKhau" formControlName="matKhau" required>
+        <mat-error *ngIf="RegisterComponent.controls['matKhau'].errors && f.submitted">
+          <div *ngIf="RegisterComponent.controls['matKhau'].errors.required">Mật khẩu là bắt buộc</div>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>
+          <mat-icon>lock</mat-icon> Quyền
+        </mat-label>
+        <select matNativeControl id="quyen" formControlName="quyen">
+          <option value="BN">Bệnh nhân</option>
+          <option value="BS">Bác sĩ</option>
+        </select>
+      </mat-form-field>
+
+      <div class="button">
+        <button type="submit" mat-button [disabled]="RegisterComponent.invalid">Register</button>
+      </div>
+    </form>
+    <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
+      Đăng ký thất bại!<br />{{ errorMessage }}
+    </div>
+  </mat-card-content>
+  <div *ngIf="isSuccessful" class="alert alert-success">
+    Đăng ký thành công!
+  </div>
+</mat-card> -->
+

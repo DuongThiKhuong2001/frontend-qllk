@@ -3,16 +3,52 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material-module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FormdesignComponent } from './user/formdesign/formdesign.component';
+import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
+import { RegisterComponent } from './auth/register/register.component';
+import { httpInterceptorProviders } from './_helpers/http.interceptor';
+import { LoginComponent } from './auth/login/login.component';
+import { MenubarComponent } from './admin/menubar/menubar.component';
+import { RootComponent } from './root.component';
+import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
+import { UserhomeComponent } from './user/userhome/userhome.component';
+import { TestComponent } from './admin/test/test.component';
+import { AdminComponent } from './admin/AdminComponent';
+import { UserComponent } from './user/UserComponent';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RootComponent,
+    MenubarComponent,
+    FormdesignComponent,
+    LoginComponent,
+    RegisterComponent,
+    AdminhomeComponent,
+    UserhomeComponent,
+    TestComponent,
+    AdminComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut: 1500, // Thiết lập thời gian tồn tại là 1,5 giây
+    }),
+    CommonModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [httpInterceptorProviders],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

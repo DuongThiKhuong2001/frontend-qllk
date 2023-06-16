@@ -1,0 +1,86 @@
+:host {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px;
+}
+
+.mat-form-field {
+  width: 500%;
+  min-width: 500px;
+}
+
+mat-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+mat-card {
+  box-shadow: 0 0 100px rgba(125, 79, 204, 0.878);
+  border-radius: 20px;
+
+
+}
+
+
+mat-card-content {
+  display: flex;
+  justify-content: center;
+
+}
+
+mat-form-field {
+  width: 50%;
+  min-width: 500px;
+  display: flex;
+  justify-content: center;
+  border-radius: 100px
+}
+form {
+  padding: 16px;
+  width: 500px;
+
+}
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #3216d1e5;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  width: 200px;
+  /* Độ rộng của nút */
+  margin: 0 auto;
+  /* Căn giữa nút trong phần tử chứa */
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+  background-image: url("src/assets/icons/register.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-weight: bold;
+}

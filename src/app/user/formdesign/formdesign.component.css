@@ -1,0 +1,32 @@
+
+mat-card{
+    margin: 2%;
+    box-shadow: 0 0 100px rgba(156, 126, 209, 0.878);
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.mat-form-field {
+    width: 50%;
+    margin: 1%;
+}
+
+.mat-50{
+    width: 25%;
+    margin: 1%;
+    justify-content: center;
+
+}
+
+button{
+    margin: 2px;
+      justify-content: center;
+      align-items: center;
+}
+.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

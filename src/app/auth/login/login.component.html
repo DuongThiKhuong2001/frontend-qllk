@@ -1,0 +1,73 @@
+<mat-card>
+  <mat-card-title>
+    <div class="avatar">
+      <!-- Add your avatar content here -->
+    </div>
+
+  </mat-card-title>
+  <mat-card-title>
+    <span>Login </span>
+  </mat-card-title>
+
+  <mat-card-content>
+    <form
+      *ngIf="!isLoggedIn"
+      name="form"
+      (ngSubmit)="f.form.valid && submit()"
+      #f="ngForm"
+      novalidate
+    >
+      <div class="form-group">
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            type="text"
+            name="username"
+            [(ngModel)]="form.username"
+            required
+            #username="ngModel"
+            [ngClass]="{ 'mat-invalid': f.submitted && username.invalid }"
+          />
+          <mat-error *ngIf="username.invalid && f.submitted">
+            Username is required!
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            name="password"
+            [(ngModel)]="form.password"
+            required
+            minlength="5"
+            #password="ngModel"
+            [ngClass]="{ 'mat-invalid': f.submitted && password.invalid }"
+          />
+          <mat-error *ngIf="password.invalid && f.submitted">
+            <div *ngIf="password.errors?.['required']">Password is required</div>
+            <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters</div>
+          </mat-error>
+        </mat-form-field>
+      </div>
+       <mat-card-title>
+      <div class="form-group">
+        <button mat-raised-button color="warn" type="submit">
+          Login
+        </button>
+         <button mat-raised-button color="primary"  type="submit" (click)="register()">
+          Register
+        </button>
+      </div></mat-card-title>
+      <div class="form-group">
+        <div *ngIf="f.submitted && isLoginFailed" class="mat-alert mat-alert-danger" role="alert">
+          Login failed: {{ errorMessage }}
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+
