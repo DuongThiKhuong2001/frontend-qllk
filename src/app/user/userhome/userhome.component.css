@@ -1,52 +1,12 @@
-/* .wireframe---1 {
-  height: 1024px;
-  width: 1440px;
-  background-color: #ffffff;
-}
+.toolbar-image {
+  width: 100%;
 
-.rectangle-1 {
-  height: 145px;
-  width: 1440px;
-  background-color: #7b61ff;
+  height: 400px;
 }
-
-.text-1 {
-  text-align: left;
-  vertical-align: top;
-  font-size: 55px;
-  font-family: Inter;
-  line-height: auto;
-  color: #ffffff;
+.card {
+  border-radius: 10px;
+  box-shadow: 0 0 24px rgba(79, 196, 204, 0.878);
 }
-
-.rectangle-2 {
-  height: 349px;
-  width: 1329px;
-  background-color: #d9d9d9;
-} */
-.wireframe---1 {
-  height: 1024px;
-  width: 1440px;
-  background-color: #ffffff;
-}
-
-.rectangle-1 {
-  height: 145px;
-  width: 1440px;
-  background-color: #7b61ff;
-}
-
-.text-1 {
-  text-align: left;
-  vertical-align: top;
-  font-size: 55px;
-  font-family: Inter;
-  line-height: auto;
-  color: #ffffff;
-}
-
-.rectangle-2 {
-  height: 349px;
-  width: 1329px;
-  background-color: #d9d9d9;
+.card-text{
+text-align: center;
 }

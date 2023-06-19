@@ -1,0 +1,33 @@
+<mat-toolbar color="aqua" >
+  <mat-toolbar-row>
+    <span>BookingCare</span>
+    <span class="toolbar-spacer"></span>
+    <button mat-button routerLink="home" [class.checked]="isTrangChuActive" (click)="setActiveButton('trangChu')">
+      Trang chủ
+    </button>
+    <button mat-button routerLink="hoso" [class.checked]="isGioiThieuActive" (click)="setActiveButton('gioiThieu')">
+     Hồ sơ sức khỏe
+    </button>
+    <button mat-button routerLink="footer" [class.checked]="isLienHeActive" (click)="setActiveButton('lienHe')">
+      Cơ sở y tế
+    </button>
+     <button  mat-button>
+      Chuyên khoa
+    </button>
+    <button  mat-button>
+      Bác sĩ
+    </button>
+    <span class="toolbar-spacer"></span>  <p>Hỗ trợ tư vấn<br>0234.234.543</p>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Toggle navigation">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <a mat-menu-item href="#" routerLink="/ho-so">Hồ sơ</a>
+      <a mat-menu-item href="#" routerLink="/doi-mat-khau">Đổi mật khẩu</a>
+      <a mat-menu-item href="#" (click)="logout()">Đăng xuất</a>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+

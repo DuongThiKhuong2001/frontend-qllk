@@ -4,7 +4,7 @@ import { StorageService } from '../_services/storage.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-user',
-  template: '<router-outlet></router-outlet>',
+  template: '<app-main>',
   styles: [
     `
       .mat-toolbar.mat-dark {

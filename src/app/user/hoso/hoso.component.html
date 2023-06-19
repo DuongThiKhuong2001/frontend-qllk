@@ -1,0 +1,57 @@
+<div class="grid-container">
+  <mat-card *ngFor="let hosoItem of hoSo" class="card-item">
+    <mat-card-header>
+      <mat-card-title class="card-title">
+        HoSo Information
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table>
+        <tr>
+          <td class="column-name">ID:</td>
+          <td>{{ hosoItem?.id }}</td>
+        </tr>
+        <tr>
+          <td class="column-name">User ID:</td>
+          <td>{{ hosoItem?.user?.id }}</td>
+        </tr>
+        <tr>
+          <td class="column-name">Tên:</td>
+          <td>{{ hosoItem?.ten }}</td>
+        </tr>
+        <tr>
+          <td class="column-name">Ngày sinh:</td>
+          <td>{{ hosoItem?.ngaySinh }}</td>
+        </tr>
+        <tr>
+          <td class="column-name">Giới tính:</td>
+          <td>{{ hosoItem?.gioiTinh }}</td>
+        </tr>
+        <tr>
+          <td class="column-name">Số điện thoại:</td>
+          <td>{{ hosoItem?.soDienThoai }}</td>
+        </tr>
+        <tr>
+          <td class="column-name">Nghề nghiệp:</td>
+          <td>{{ hosoItem?.ngheNghiep }}</td>
+        </tr>
+        <tr>
+          <td class="column-name">CMND:</td>
+          <td>{{ hosoItem?.cmnd }}</td>
+        </tr>
+        <tr>
+          <td class="column-name">Dân tộc:</td>
+          <td>{{ hosoItem?.danToc }}</td>
+        </tr>
+        <tr>
+          <td class="column-name">Địa chỉ:</td>
+          <td>{{ hosoItem?.diaChi }}</td>
+        </tr>
+        <tr>
+          <td class="column-name">Email:</td>
+          <td>{{ hosoItem?.email }}</td>
+        </tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>  <button class="btn btn-primary" (click)="createHoso()">Thêm hồ sơ</button>

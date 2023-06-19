@@ -1,0 +1,11 @@
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+.mat-aqua{
+  background-color: white;
+  color: black;
+}
+button.checked {
+  background-color: #33a5e7;
+  color:black
+}

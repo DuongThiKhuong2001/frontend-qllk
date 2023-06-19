@@ -6,11 +6,11 @@
        <mat-card-title>
     <span class="text-center">NHẬP THÔNG TIN BỆNH NHÂN</span>
   </mat-card-title>
-      <mat-form-field  class="mat-50" >
+      <mat-form-field  class="mat-50" appearance="outline" class="full-width" style="margin: 10px;">
         <mat-label>Họ và Tên</mat-label>
         <input formControlName="ten" matInput />
       </mat-form-field>
-      <mat-form-field class="mat-50" >
+      <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;" >
         <mat-label>Ngày sinh</mat-label>
         <input matInput [matDatepicker]="picker" formControlName="ngaySinh" />
         <mat-datepicker-toggle
@@ -20,7 +20,7 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
-      <mat-form-field class="mat-50" >
+      <mat-form-field class="mat-50" appearance="outline" class="full-width" style="margin: 10px;">
         <mat-label>Giới tính</mat-label>
         <mat-select formControlName="gioiTinh">
           <mat-option value="Male">Nam</mat-option>
@@ -28,30 +28,30 @@
         </mat-select>
       </mat-form-field>
 
-      <mat-form-field class="mat-50" >
+      <mat-form-field class="mat-50" appearance="outline" class="full-width"  style="margin: 10px;"  >
         <mat-label>Số điện thoại</mat-label>
         <input matInput formControlName="soDienThoai" />
       </mat-form-field>
 
-      <mat-form-field class="mat-50">
+      <mat-form-field class="mat-50" appearance="outline" class="full-width" style="margin: 10px;">
         <mat-label>Nghề nghiệp</mat-label>
         <input matInput formControlName="ngheNghiep" />
       </mat-form-field >
 
-      <mat-form-field class="mat-50" >
+      <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;"  >
         <mat-label>CMND</mat-label>
         <input matInput formControlName="cmnd" />
       </mat-form-field>
-       <mat-form-field class="mat-50" >
+       <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;" >
         <mat-label>Địa chỉ Email</mat-label>
         <input matInput formControlName="email" />
       </mat-form-field>
 
-      <mat-form-field class="mat-50" >
+      <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;"  >
         <mat-label>Dân tộc</mat-label>
         <input matInput formControlName="danToc" />
       </mat-form-field>
-      <mat-form-field class="mat-50" >
+      <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;" >
         <mat-label>Tỉnh/Thành</mat-label>
 
         <mat-select
@@ -64,7 +64,7 @@
         </mat-select>
       </mat-form-field>
 
-      <mat-form-field class="mat-50" >
+      <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;" >
         <mat-label>Quận/Huyện</mat-label>
 
         <mat-select
@@ -75,7 +75,7 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-form-field class="mat-50" >
+      <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;" >
         <mat-label>Phường/Xã</mat-label>
         <mat-select formControlName="xa">
           <mat-option *ngFor="let xa of xaList" [value]="xa.code">
@@ -83,7 +83,7 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-form-field class="mat-50" >
+      <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;"  >
         <mat-label>Địa chỉ</mat-label>
         <input matInput formControlName="diaChi" />
       </mat-form-field>

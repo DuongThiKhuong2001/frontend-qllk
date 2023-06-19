@@ -9,6 +9,8 @@ import { TestComponent } from './admin/test/test.component';
 import { UserhomeComponent } from './user/userhome/userhome.component';
 import { AdminComponent } from './admin/AdminComponent';
 import { UserComponent } from './user/UserComponent';
+import { FooterComponent } from './user/footer/footer.component';
+import { HosoComponent } from './user/hoso/hoso.component';
 
 const routes: Routes = [
   {
@@ -32,11 +34,14 @@ const routes: Routes = [
     component: UserComponent,
     children: [
       { path: '', component: UserhomeComponent },
+      { path: 'home', component: UserhomeComponent },
       {
         path: 'trangchu',
         component: UserhomeComponent,
       },
-      { path: 'themhoso', component: FormdesignComponent },
+      { path: 'hoso', component: HosoComponent },
+      { path: 'footer', component: FooterComponent },
+      { path: 'themhoso', component: FormdesignComponent},
     ],
   },
 

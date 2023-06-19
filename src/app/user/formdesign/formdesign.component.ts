@@ -8,6 +8,7 @@ import { StorageService } from 'src/app/_services/storage.service';
   selector: 'app-hoso-form',
   templateUrl: './formdesign.component.html',
   styleUrls: ['./formdesign.component.css'],
+
 })
 export class FormdesignComponent implements OnInit {
   customerform: any;
@@ -107,4 +108,10 @@ export class FormdesignComponent implements OnInit {
   clearForm() {
     this.customerform.reset();
   }
+
+  showForm() {
+    // Xử lý hiển thị form
+  }
+
+
 }

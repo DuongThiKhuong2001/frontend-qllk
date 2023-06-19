@@ -20,7 +20,11 @@ import { UserhomeComponent } from './user/userhome/userhome.component';
 import { TestComponent } from './admin/test/test.component';
 import { AdminComponent } from './admin/AdminComponent';
 import { UserComponent } from './user/UserComponent';
-
+import { HeaderComponent } from './user/header/header.component';
+import { FooterComponent } from './user/footer/footer.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { HosoComponent } from './user/hoso/hoso.component';
+import { MainComponent } from './user/main/main.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +38,10 @@ import { UserComponent } from './user/UserComponent';
     TestComponent,
     AdminComponent,
     UserComponent,
+    HeaderComponent,
+    FooterComponent,
+    HosoComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +55,7 @@ import { UserComponent } from './user/UserComponent';
       timeOut: 1500, // Thiết lập thời gian tồn tại là 1,5 giây
     }),
     CommonModule,
+    CarouselModule,
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
