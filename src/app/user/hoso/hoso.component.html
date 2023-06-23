@@ -1,3 +1,10 @@
+<mat-toolbar color="primary">
+  <span class="toolbar-title">Thông tin hồ sơ</span>
+  <span class="spacer"></span>
+  <button mat-icon-button>
+   <mat-icon>description</mat-icon>
+  </button>
+</mat-toolbar>
 <div class="grid-container">
   <mat-card *ngFor="let hosoItem of hoSo" class="card-item">
     <mat-card-header>
@@ -7,14 +14,6 @@
     </mat-card-header>
     <mat-card-content>
       <table>
-        <tr>
-          <td class="column-name">ID:</td>
-          <td>{{ hosoItem?.id }}</td>
-        </tr>
-        <tr>
-          <td class="column-name">User ID:</td>
-          <td>{{ hosoItem?.user?.id }}</td>
-        </tr>
         <tr>
           <td class="column-name">Tên:</td>
           <td>{{ hosoItem?.ten }}</td>
@@ -52,6 +51,16 @@
           <td>{{ hosoItem?.email }}</td>
         </tr>
       </table>
+           <div style="margin-right: 2%; text-align: center; border-top: 1px solid rgb(179, 164, 164); margin-top: 10px;">
+        <button style="margin-top: 20px;margin: 10px;" mat-stroked-button color="warn" (click)="deleteHoso(hosoItem?.id)">
+            <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>Xóa hồ sơ</button>
+         <button style="margin-top: 20px;margin: 10px;"  mat-stroked-button color="primary">Sửa
+            <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
+         </button>
+        <button  style="margin-top: 20px;margin: 10px;"  mat-raised-button color="primary" (click)="continueHoso()">Tiếp tục </button>
+      </div>
     </mat-card-content>
   </mat-card>
-</div>  <button class="btn btn-primary" (click)="createHoso()">Thêm hồ sơ</button>
+</div>
+ <button mat-stroked-button color="basic" style="margin-right: 16px; margin-bottom: 40px; margin-top: 40px;">Trở lại</button>
+ <button class="btn btn-primary" style="margin-bottom: 40px;margin-top: 40px;" (click)="createHoso()">Thêm hồ sơ</button>

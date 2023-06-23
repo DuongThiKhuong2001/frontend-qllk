@@ -1,0 +1,19 @@
+mat-toolbar
+{
+  margin-top: 40px;
+background-color: rgb(93, 153, 231);
+}
+.custom-tab-group {
+  background-color: #43c8f1;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.custom-tab {
+  background-color: #fa6464;
+}
+
+.custom-tab-content {
+  padding: 16px;
+  font-size: 18px;
+}

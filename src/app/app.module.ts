@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +26,19 @@ import { FooterComponent } from './user/footer/footer.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HosoComponent } from './user/hoso/hoso.component';
 import { MainComponent } from './user/main/main.component';
+
+import { TabsComponent } from './user/tabs/tabs.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BenhVienDialogComponent } from './user/benhvien-dialog/benhvien-dialog.component';
+import { CosoyteComponent } from './user/cosoyte/cosoyte.component';
+import { ChuyenkhoaComponent } from './user/chuyenkhoa/chuyenkhoa.component';
+import { BacsiComponent } from './user/basi/basi.component';
+import { LichkhamComponent } from './user/lichkham/lichkham.component';
+import { LichTrucComponent } from './user/lichtruc/lichtruc.component';
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +56,13 @@ import { MainComponent } from './user/main/main.component';
     FooterComponent,
     HosoComponent,
     MainComponent,
+    CosoyteComponent,
+    TabsComponent,
+    BenhVienDialogComponent,
+    ChuyenkhoaComponent,
+    BacsiComponent,
+    LichkhamComponent,
+    LichTrucComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +77,7 @@ import { MainComponent } from './user/main/main.component';
     }),
     CommonModule,
     CarouselModule,
+    MatTabsModule,
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],

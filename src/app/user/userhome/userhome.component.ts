@@ -1,6 +1,5 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
-import { EventEmitter, Output } from '@angular/core';
 
 
 @Component({

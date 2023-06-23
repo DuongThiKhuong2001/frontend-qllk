@@ -1,0 +1,24 @@
+<p>bacsi works!</p>
+<p>bacsi works!</p>
+<p>bacsi works!</p><p>bacsi works!</p>
+<div style=" overflow-y: scroll; display: flex; align-items: center; justify-content: center;">
+  <div *ngIf="doctors">
+    <h2>Danh sách bác sĩ</h2>
+
+    <div class="doctor-container" *ngFor="let doctor of doctors">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="doctor-avatar"></div>
+        </mat-card-header>
+        <mat-card-content>
+          <p style="color: rgb(32, 53, 236);"><strong>{{ doctor.tenBacSi }}</strong></p>
+          <p><strong>Địa chỉ:</strong>{{ doctor.diaChi }}</p>
+          <p><strong>Giới tính:</strong>{{ doctor.gioiTinh ? 'Nam' : 'Nữ' }}</p>
+          <p><strong>Giá khám:</strong> {{ doctor.giaKham }}</p>
+          <p><strong>Số điện thoại:</strong>{{ doctor.soDienThoai }}</p>
+          <p><strong>Chuyên khoa:</strong> {{ doctor.chuyenKhoa?.tenChuyenKhoa }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

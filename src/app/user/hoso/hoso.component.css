@@ -3,17 +3,23 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
+mat-toolbar{
+  margin-top: 45px;
+  max-height: 500px;
+}
 mat-card {
   flex: 0 0 calc(33.33% - 20px);
-  margin: 10px;
+  margin: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  max-width: 300px;
+  max-width: 500px;
+
+
 }
 
-.mat-card-content {
+mat-card-content {
   padding: 12px;
+  margin-top: 20px;
 }
 
 .card-title {
@@ -31,6 +37,8 @@ td {
 }
 table{
   margin-left: 20px;
+
+
 }
 button {
   margin: 2px;

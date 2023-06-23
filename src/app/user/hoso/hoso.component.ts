@@ -25,4 +25,13 @@ export class HosoComponent implements OnInit {
   createHoso() {
     this.router.navigate(['nguoidung/themhoso']);
   }
+  deleteHoso(id: any) {
+    this.hoSoService.deleteHoSo(id).subscribe(() => {
+      alert('Xóa thành công');
+      this.loadHoSo();
+    });
+  }
+  continueHoso() {
+    this.router.navigate(['nguoidung/cosoyte']);
+  }
 }

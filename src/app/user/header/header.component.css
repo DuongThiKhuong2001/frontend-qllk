@@ -1,11 +1,46 @@
 .toolbar-spacer {
   flex: 1 1 auto;
+  box-shadow: 0 0 100px rgba(125, 79, 204, 0.878);
+
+
 }
 .mat-aqua{
-  background-color: white;
+  background-color:#ffffff;
   color: black;
 }
 button.checked {
-  background-color: #33a5e7;
+ background-color: rgb(75, 161, 177);
   color:black
+}
+mat-toolbar{
+  position: fixed;
+  z-index: 999;
+  background-color: #ffffff;
+  box-shadow: 0 0 100px rgba(65, 62, 62, 0.878);
+
+
+}
+.custom-button {
+  border: 1px solid rgb(119, 114, 167);
+}
+
+
+.slider-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.overlay p {
+  font-size: 24px;
+  font-weight: bold;
 }

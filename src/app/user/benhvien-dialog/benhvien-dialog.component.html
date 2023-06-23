@@ -1,0 +1,19 @@
+
+<h2 mat-dialog-title>Install Angular</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="grid-container">
+    <mat-card class="grid-item" *ngFor="let benhVien of benhVienList" (click)="chonBenhVien(benhVien.id)">
+      <mat-card-content>
+        <p><strong>Tên bệnh viện:</strong> {{ benhVien.tenBenhVien }}</p>
+        <p><strong>Địa chỉ:</strong> {{ benhVien.diaChi }}</p>
+         <p><strong>Tuyến Bệnh viện:</strong> {{ benhVien.tuyenBenhVien }}</p>
+        <p><strong>Số điện thoại:</strong> {{ benhVien.soDienThoai }}</p>
+        <!-- Add more fields as needed -->
+      </mat-card-content>
+    </mat-card>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-stroked-button color="warn" mat-dialog-close class="button-margin">Đóng</button>
+</mat-dialog-actions>
+

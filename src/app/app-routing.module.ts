@@ -11,7 +11,11 @@ import { AdminComponent } from './admin/AdminComponent';
 import { UserComponent } from './user/UserComponent';
 import { FooterComponent } from './user/footer/footer.component';
 import { HosoComponent } from './user/hoso/hoso.component';
-
+import { CosoyteComponent } from './user/cosoyte/cosoyte.component';
+import { ChuyenkhoaComponent } from './user/chuyenkhoa/chuyenkhoa.component';
+import { BacsiComponent } from './user/basi/basi.component';
+import { LichkhamComponent } from './user/lichkham/lichkham.component';
+import { LichTrucComponent} from './user/lichtruc/lichtruc.component';
 const routes: Routes = [
   {
     path: '',
@@ -35,13 +39,14 @@ const routes: Routes = [
     children: [
       { path: '', component: UserhomeComponent },
       { path: 'home', component: UserhomeComponent },
-      {
-        path: 'trangchu',
-        component: UserhomeComponent,
-      },
+      { path: 'trangchu', component: UserhomeComponent },
       { path: 'hoso', component: HosoComponent },
-      { path: 'footer', component: FooterComponent },
-      { path: 'themhoso', component: FormdesignComponent},
+      { path: 'cosoyte', component: CosoyteComponent },
+      { path: 'themhoso', component: FormdesignComponent },
+      { path: 'chuyenkhoa/:id', component: ChuyenkhoaComponent },
+      { path: 'bacsi/:id', component: BacsiComponent },
+      { path: 'lichkham', component: LichkhamComponent },
+      { path: 'lichtruc', component: LichTrucComponent },
     ],
   },
 

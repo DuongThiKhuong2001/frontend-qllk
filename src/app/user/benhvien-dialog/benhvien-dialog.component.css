@@ -1,0 +1,17 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.grid-item {
+  /* Add additional styling for grid items if needed */
+  border: 1px solid #ccc;
+    border-radius: 4px;
+}
+mat-dialog-actions{
+  display: flex;
+    justify-content: flex-end;
+    /* Căn phải các action buttons */
+    padding: 16px;
+}

@@ -1,0 +1,28 @@
+<p>lichtruc works!</p>
+<p>lichtruc works!</p>
+<p>lichtruc works!</p>
+
+<table mat-table [dataSource]="lichTrucList">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let lichTruc">{{ lichTruc.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="bacSi">
+    <th mat-header-cell *matHeaderCellDef>Bác Sĩ</th>
+    <td mat-cell *matCellDef="let lichTruc">{{ lichTruc.bacSi }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="ngayTruc">
+    <th mat-header-cell *matHeaderCellDef>Ngày Trực</th>
+    <td mat-cell *matCellDef="let lichTruc">{{ lichTruc.ngayTruc }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="gioTruc">
+    <th mat-header-cell *matHeaderCellDef>Giờ Trực</th>
+    <td mat-cell *matCellDef="let lichTruc">{{ lichTruc.gioTruc }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="['id', 'bacSi', 'ngayTruc', 'gioTruc']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['id', 'bacSi', 'ngayTruc', 'gioTruc']"></tr>
+</table>

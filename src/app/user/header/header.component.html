@@ -1,33 +1,39 @@
-<mat-toolbar color="aqua" >
+<mat-toolbar  >
   <mat-toolbar-row>
     <span>BookingCare</span>
     <span class="toolbar-spacer"></span>
-    <button mat-button routerLink="home" [class.checked]="isTrangChuActive" (click)="setActiveButton('trangChu')">
+    <button  mat-button  routerLink="home" [class.checked]="isTrangChuActive" (click)="setActiveButton('trangChu')" class="underline">
       Trang chủ
     </button>
-    <button mat-button routerLink="hoso" [class.checked]="isGioiThieuActive" (click)="setActiveButton('gioiThieu')">
+    <button mat-button  routerLink="hoso" [class.checked]="isGioiThieuActive" (click)="setActiveButton('hoSo')">
      Hồ sơ sức khỏe
     </button>
-    <button mat-button routerLink="footer" [class.checked]="isLienHeActive" (click)="setActiveButton('lienHe')">
+    <button mat-button routerLink="cosoyte" [class.checked]="isLienHeActive" (click)="setActiveButton('cosoYTe')">
       Cơ sở y tế
     </button>
-     <button  mat-button>
+     <button  mat-button routerLink="chuyenkhoa" [class.checked]="isChuyenKhoaActive" (click)="setActiveButton('chuyenKhoa')">
       Chuyên khoa
     </button>
-    <button  mat-button>
+    <button  mat-button routerLink="bacsi" [class.checked]="isBacSiActive" (click)="setActiveButton('bacSi')">
       Bác sĩ
     </button>
-    <span class="toolbar-spacer"></span>  <p>Hỗ trợ tư vấn<br>0234.234.543</p>
+
+    <span class="toolbar-spacer"></span>
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Toggle navigation">
       <mat-icon>menu</mat-icon>
+
     </button>
-    <mat-menu #menu="matMenu">
-      <a mat-menu-item href="#" routerLink="/ho-so">Hồ sơ</a>
-      <a mat-menu-item href="#" routerLink="/doi-mat-khau">Đổi mật khẩu</a>
-      <a mat-menu-item href="#" (click)="logout()">Đăng xuất</a>
-    </mat-menu>
+ <button mat-button [matMenuTriggerFor]="menu" class="custom-button">Tên người dùng</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/hoso">Hồ sơ</button>
+  <button mat-menu-item routerLink="/thongbao">Thông báo</button>
+  <button mat-menu-item routerLink="/doimatkhau">Đổi mật khẩu</button>
+  <button mat-menu-item (click)="logout()">Đăng xuất</button>
+</mat-menu>
+
   </mat-toolbar-row>
-</mat-toolbar>
+</mat-toolbar >
+
 
 
 
