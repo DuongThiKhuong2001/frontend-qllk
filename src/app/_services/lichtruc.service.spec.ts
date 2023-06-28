@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LichtrucService } from './lichtruc.service';
+import { LichTrucService } from './lichtruc.service';
 
 describe('LichtrucService', () => {
-  let service: LichtrucService;
+  let service: LichTrucService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LichtrucService);
+    service = TestBed.inject(LichTrucService);
   });
 
   it('should be created', () => {

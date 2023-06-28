@@ -1,1 +1,24 @@
-<p>lichkham works!</p>
+
+
+<div *ngIf="lichKhamList">
+  <h2>Thông tin lịch khám</h2>
+<div style="margin-left: 8%;">
+   <tr *ngFor="let lichKham of lichKhamList">
+     <th >Bác sĩ:</th>
+    <td>{{ lichKham.bacSi.tenBacSi }}</td>
+  </tr></div>
+  <table class="schedule-table">
+    <thead>
+      <tr>
+        <th>Ngày khám</th>
+        <th>Giờ khám</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lichKham of lichKhamList" (click)="chonLichKham(lichKham)">
+        <td>{{ lichKham.ngayKham | date:'dd/MM/yyyy' }}</td>
+        <td>{{ lichKham.gioKham }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

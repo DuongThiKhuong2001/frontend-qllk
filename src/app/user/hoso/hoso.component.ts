@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HoSoService } from 'src/app/_services/hoso.service';
@@ -7,11 +8,16 @@ import { HoSoService } from 'src/app/_services/hoso.service';
   selector: 'app-ho-so',
   templateUrl: './hoso.component.html',
   styleUrls: ['./hoso.component.css'],
+  providers: [DatePipe],
 })
 export class HosoComponent implements OnInit {
   hoSo: any;
 
-  constructor(private hoSoService: HoSoService, private router: Router) {}
+  constructor(
+    private hoSoService: HoSoService,
+    private router: Router,
+    private datePipe: DatePipe
+  ) {}
 
   ngOnInit(): void {
     this.loadHoSo();

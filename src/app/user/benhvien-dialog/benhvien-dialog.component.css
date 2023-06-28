@@ -15,3 +15,12 @@ mat-dialog-actions{
     /* Căn phải các action buttons */
     padding: 16px;
 }
+
+
+
+.right-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}

@@ -1,0 +1,44 @@
+/* Cấu trúc bảng */
+.mat-elevation-z8 {
+  width: 50%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Tiêu đề cột */
+.mat-header-cell {
+  background-color: #3cc5c5;
+  font-weight: bold;
+  padding: 20px;
+}
+
+/* Ô dữ liệu trong cột */
+.mat-cell {
+  padding: 10px;
+}
+
+/* Dòng tiêu đề cột */
+.mat-header-row {
+  background-color: #24a1b8;
+}
+
+/* Dòng dữ liệu */
+.mat-row {
+  border-bottom: 1px solid #ccc;
+}
+
+/* Căn chỉnh văn bản trong ô */
+.mat-cell,
+.mat-header-cell {
+  text-align: left;
+}
+
+/* Định dạng ngày trong ô "Lịch Khám" */
+.mat-cell:nth-child(2) {
+  white-space: nowrap;
+}
+
+/* Định dạng cột "Lịch Khám" */
+.mat-column-lichKham {
+  width: 100px;
+}

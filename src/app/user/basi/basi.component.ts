@@ -8,7 +8,6 @@ import { BasiService } from 'src/app/_services/bacsi.service';
   styleUrls: ['./basi.component.css'],
 })
 export class BacsiComponent implements OnInit {
-
   doctors: any[] | undefined;
 
   constructor(
@@ -29,5 +28,8 @@ export class BacsiComponent implements OnInit {
       this.doctors = data;
       console.log(this.doctors);
     });
+  }
+  chonBacsi(id: any) {
+    this.router.navigate(['nguoidung/lichtruc', id]);
   }
 }

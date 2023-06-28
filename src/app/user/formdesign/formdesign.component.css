@@ -1,7 +1,7 @@
 
 mat-card{
     margin: 25%;
-    margin-top: 1%;
+    margin-top: 5%;
     box-shadow: 0 0 100px rgba(156, 126, 209, 0.878);
     border-radius: 10px;
     text-align: center;
@@ -31,3 +31,6 @@ button{
   align-items: center;
 }
 
+mat-toolbar {
+  margin-top: 50px;
+}

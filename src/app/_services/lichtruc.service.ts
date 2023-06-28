@@ -28,4 +28,7 @@ export class LichTrucService {
   deleteLichTruc(id: number): Observable<any> {
     return this.http.delete(`${API_URL}/lichtruc/${id}`);
   }
+  getLTbyBS(id: any): Observable<any> {
+    return this.http.get(`${API_URL}/lichtruc/bacsi/${id}`);
+  }
 }

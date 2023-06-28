@@ -1,12 +1,10 @@
-<p>bacsi works!</p>
-<p>bacsi works!</p>
-<p>bacsi works!</p><p>bacsi works!</p>
-<div style=" overflow-y: scroll; display: flex; align-items: center; justify-content: center;">
+
+<div style=" overflow-y: scroll; display: flex; align-items: center; justify-content: center;margin-top: 5%;">
   <div *ngIf="doctors">
     <h2>Danh sách bác sĩ</h2>
 
     <div class="doctor-container" *ngFor="let doctor of doctors">
-      <mat-card>
+      <mat-card (click)="chonBacsi(doctor.id)">
         <mat-card-header>
           <div mat-card-avatar class="doctor-avatar"></div>
         </mat-card-header>

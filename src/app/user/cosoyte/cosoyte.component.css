@@ -1,7 +1,10 @@
 mat-card{
-  margin-top: 20px;
+  margin-top: 10px;
 
 }
 mat-toolbar {
   margin-top: 45px;
+}
+h1 {
+  margin-top: 2%;
 }

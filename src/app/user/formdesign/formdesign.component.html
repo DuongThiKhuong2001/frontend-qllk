@@ -1,4 +1,10 @@
-
+<mat-toolbar color="primary">
+  <span class="toolbar-title">TẠO HỒ SƠ</span>
+  <span class="spacer"></span>
+  <button mat-icon-button>
+   <mat-icon>description</mat-icon>
+  </button>
+</mat-toolbar>
 <div class="form-container">
 <form [formGroup]="customerform" (ngSubmit)="SaveHoSo()">
   <mat-card >
@@ -89,7 +95,7 @@
       </mat-form-field>
     </mat-card-content>
       <div style="margin: 2%; text-align: center">
-        <button mat-raised-button type="submit" color="primary">Lưu</button>
+        <button style="margin-right: 16px;" mat-raised-button type="submit" color="primary">Lưu</button>
         <button mat-raised-button color="warn" (click)="clearForm()">
           Xóa
         </button>

@@ -1,0 +1,121 @@
+/* .schedule-table-small {
+  width: 50%;
+  border-collapse: collapse;
+  margin-bottom: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.schedule-table-small th,
+.schedule-table-small td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  font-size: 12px;
+}
+
+.schedule-table-small th {
+  background-color: #2897aa;
+  color: #fff;
+} */
+/* CSS cho phần tổng thể */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-content: center;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+/* CSS cho phần ngày khám */
+.date-field {
+  margin-bottom: 20px;
+}
+
+/* CSS cho phần giờ khám */
+.time-field {
+  margin-bottom: 20px;
+}
+
+/* CSS cho các thành phần của form field */
+mat-form-field {
+  width: 340%;
+  justify-content: center;
+}
+
+/* CSS cho các thành phần của mat-select */
+mat-select {
+  width: 100%;
+}
+
+/* CSS cho các thành phần của mat-option */
+mat-option {
+  padding: 10px;
+}
+
+/* CSS cho các thành phần của mat-label */
+mat-label {
+  color: #333;
+  font-weight: bold;
+}
+
+/* CSS cho các thành phần của mat-select trigger */
+mat-select-trigger {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* CSS cho các thành phần của mat-select panel */
+mat-select-panel {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* CSS cho các thành phần của mat-option khi được chọn */
+mat-option.mat-selected {
+  background-color: #f0f0f0;
+}
+mat-card {
+  margin: 10%;
+  margin-top: 2%;
+  box-shadow: 0 0 100px rgba(227, 216, 248, 0.878);
+  border-radius: 10px;
+  text-align: center;
+  height: 400px;
+
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-container .form-field {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 10px;
+}
+
+.card-container table {
+  width: 100%;
+}
+
+.card-container table .form-field {
+  margin: 10px;
+}
+button{
+  margin: 16px;
+}
+.selected {
+  font-weight: bold;
+ color: blue;
+ 
+  /* Hoặc thêm hiệu ứng khác tùy ý */
+}

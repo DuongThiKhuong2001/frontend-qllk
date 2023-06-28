@@ -1,0 +1,23 @@
+<p>lichkhamchuyenkhoa works!</p>
+<p>lichkhamchuyenkhoa works!</p>
+<p>lichkhamchuyenkhoa works!</p>
+<p>lichkhamchuyenkhoa works!</p>
+
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Chuyen Khoa Column -->
+  <ng-container matColumnDef="chuyenKhoa">
+    <mat-header-cell *matHeaderCellDef>Chuyên Khoa</mat-header-cell>
+    <mat-cell *matCellDef="let lichKhamChuyenKhoa">{{ lichKhamChuyenKhoa.chuyenKhoa.tenChuyenKhoa }}</mat-cell>
+  </ng-container>
+
+  <!-- Lich Kham Column -->
+  <ng-container matColumnDef="lichKham">
+    <mat-header-cell *matHeaderCellDef>Lịch Khám</mat-header-cell>
+    <mat-cell *matCellDef="let lichKhamChuyenKhoa">{{ lichKhamChuyenKhoa.lichKham?.ngayKham | date:'dd/MM/yyyy' }}<br>
+      {{ lichKhamChuyenKhoa.lichKham?.gioKham }}
+    </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
