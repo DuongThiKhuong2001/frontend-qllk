@@ -27,6 +27,7 @@ export class BenhVienDialogComponent {
     });
   }
   chonBenhVien(id: any) {
+    sessionStorage.setItem('benhvienId', id);
     this.router.navigate(['/nguoidung/chuyenkhoa', id]);
     this.dialogRef.close();
   }

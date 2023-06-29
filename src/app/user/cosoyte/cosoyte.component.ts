@@ -34,43 +34,9 @@ import { BenhVienDialogComponent } from '../benhvien-dialog/benhvien-dialog.comp
   styleUrls: ['./cosoyte.component.css'],
 })
 export class CosoyteComponent {
-  // benhVienList: any[] | undefined;
-
-  // constructor(
-  //   private dialog: MatDialog,
-  //   private cosoyteService: CosoyteService
-  // ) {}
-
-  // ngOnInit() {
-  //   this.loadBenhVienList();
-  // }
-
-  // loadBenhVienList() {
-  //   this.cosoyteService.getCosoyteList().subscribe((data) => {
-  //     this.benhVienList = data;
-  //   });
-  // }
-
-  // openDialog(id: number) {
-  //   this.cosoyteService.getCosoyteById(id).subscribe((data) => {
-  //     const dialogRef = this.dialog.open(BenhVienDialogComponent, {
-  //       width: '400px',
-  //       data: data,
-  //     });
-  //   });
-  // }
-  constructor(
-    public dialog: MatDialog,
-  
-  ) {}
+  constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    const dialogRef = this.dialog.open(BenhVienDialogComponent);
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(BenhVienDialogComponent);
   }
-
-
 }

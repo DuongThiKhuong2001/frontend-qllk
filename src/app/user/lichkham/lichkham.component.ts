@@ -1,39 +1,34 @@
-import { DatePipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
+
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BasiService } from 'src/app/_services/bacsi.service';
+import { GiotrucService } from 'src/app/_services/giotruc.service';
 import { LichKhamService } from 'src/app/_services/lichkham.service';
 
 @Component({
   selector: 'app-lichkham',
   templateUrl: './lichkham.component.html',
   styleUrls: ['./lichkham.component.css'],
-  providers: [DatePipe],
 })
-export class LichkhamComponent {
-  lichKhamList: any[] | undefined;
-
+export class LichkhamComponent implements OnInit {
+  lichkhamData: any[] = [];
+  displayedColumns: string[] = ['bacSi', 'ngayTruc', 'gioTruc', 'hoSo', 'moTa'];
+  bacSi: any;
   constructor(
     private lichKhamService: LichKhamService,
-    private route: ActivatedRoute,
-    private router: Router,
+    private giotrucService: GiotrucService,
+    private basiService: BasiService
   ) {}
 
-  ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      const bacSiId = params['id'];
-      this.loadLichKhamList(bacSiId);
+  ngOnInit() {
+    const bacsiId = sessionStorage.getItem('bacsiId');
+    this.getBacSi(bacsiId);
+  }
+  getBacSi(id: any) {
+    this.basiService.getBSById(id).subscribe((data) => {
+      this.bacSi = data;
     });
   }
 
-  loadLichKhamList(bacSiId: any): void {
-    this.lichKhamService.getLKByBS(bacSiId).subscribe((data) => {
-      this.lichKhamList = data;
-      console.log(this.lichKhamList);
-    });
-  }
-  chonLichKham(id: any) {
-    this.router.navigate(['nguoidung/lichkhamchuyenkhoa', id]);
-  }
 }
-
 

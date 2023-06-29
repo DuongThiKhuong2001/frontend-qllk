@@ -3,7 +3,7 @@
 <mat-dialog-content class="mat-typography">
   <div class="grid-container">
 
-    <mat-card class="grid-item" *ngFor="let benhVien of benhVienList" (click)="chonBenhVien(benhVien.id)">
+    <mat-card class="grid-item" *ngFor="let benhVien of benhVienList" (click)="chonBenhVien(benhVien.id)" class="cell-clickable">
       <mat-card-content>
         <p><strong>Tên bệnh viện:</strong> {{ benhVien.tenBenhVien }}</p>
         <p><strong>Địa chỉ:</strong> {{ benhVien.diaChi }}</p>

@@ -12,6 +12,5 @@ export class UserhomeComponent {
 
   bookcare() {
        this.router.navigate(['nguoidung/hoso']);
-
   }
 }

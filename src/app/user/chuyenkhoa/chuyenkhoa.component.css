@@ -1,14 +1,16 @@
 /* chuyen-khoa-table.component.css */
-.mat-table {
-  width: 100%;
+mat-table {
+  max-width: 500%;
 }
 
-button {
-  margin-right: 40px;
-}
+
 .table-container {
   height: 300px; /* Đặt chiều cao cố định cho container */
-  overflow: auto; /* Thêm chức năng cuộn cho container nếu nội dung vượt quá chiều cao */
+  overflow: auto;
+   display: flex;
+  justify-content: center;
+  background-color: rgb(242, 244, 245);
+  padding: 10px;/* Thêm chức năng cuộn cho container nếu nội dung vượt quá chiều cao */
 }
 mat-toolbar {
   margin-top: 45px;
@@ -24,23 +26,23 @@ table.mat-table {
 /* Định dạng cho header cell */
 th.mat-header-cell {
   font-weight: bold;
-  background-color: #e0e0e0;
+  background-color: #41badf;
 }
 
 /* Định dạng cho cell */
 td.mat-cell {
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #4bc8d1;
 }
 
 /* Định dạng cho hàng đầu tiên của bảng */
 tr.mat-header-row {
-  background-color: #f5f5f5;
+  background-color: #2db6c9;
 }
 
 /* Định dạng cho các hàng */
 tr.mat-row {
-  background-color: #fff;
+  background-color: #3beedf;
 }
 
 /* Định dạng cho hover cell */
@@ -49,16 +51,23 @@ tr.mat-row:hover {
 }
 .mat-card-container {
   padding: 40px;
-  margin: 40px;
+  margin: 20px;
+  justify-content: left;
+  margin-right: 40%;
+  width: 1000%;
+  background-color: #c6eef3;
 
 }
+.cell-clickable {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-.table-container {
+.cell-clickable:active {
+  background-color: lightgray;
+}
+.d-flex {
   display: flex;
-  justify-content: center;
-  background-color: white;
-  padding: 10px;
+  justify-content: space-between;
 }
-
-
 /* Các quy tắc CSS khác cho bảng */

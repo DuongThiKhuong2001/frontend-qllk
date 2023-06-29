@@ -46,7 +46,7 @@ const routes: Routes = [
       { path: 'themhoso', component: FormdesignComponent },
       { path: 'chuyenkhoa/:id', component: ChuyenkhoaComponent },
       { path: 'bacsi/:id', component: BacsiComponent },
-      { path: 'lichkham/:id', component: LichkhamComponent },
+      { path: 'lichkham', component: LichkhamComponent },
       { path: 'lichkhamchuyenkhoa', component: LichKhamChuyenKhoaComponent },
 
       { path: 'lichtruc/:id', component: LichTrucComponent },

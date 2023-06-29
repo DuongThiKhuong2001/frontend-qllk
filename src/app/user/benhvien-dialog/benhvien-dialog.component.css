@@ -24,3 +24,11 @@ mat-dialog-actions{
   object-fit: cover;
   border-radius: 50%;
 }
+.cell-clickable {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cell-clickable:active {
+  background-color: lightgray;
+}

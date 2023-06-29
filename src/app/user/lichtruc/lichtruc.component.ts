@@ -1,3 +1,5 @@
+import { GiotrucService } from './../../_services/giotruc.service';
+import { ChuyenkhoaService } from './../../_services/chuyenkhoa.service';
 import { Component, OnInit } from '@angular/core';
 import { LichTrucService } from 'src/app/_services/lichtruc.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,13 +14,13 @@ export class LichTrucComponent implements OnInit {
   lichTrucList: any[] | undefined;
   bacSi: any;
   selectedNgayTruc: any;
-  selectedGioTruc: any;
-
+  gioTrucList: any[] =[];
   constructor(
     private lichTrucService: LichTrucService,
     private route: ActivatedRoute,
     private router: Router,
-    private basiService: BasiService
+    private giotrucService: GiotrucService,
+    private basiService: BasiService // private chuyenkhoaService: ChuyenkhoaService
   ) {}
 
   ngOnInit(): void {
@@ -34,24 +36,28 @@ export class LichTrucComponent implements OnInit {
       this.bacSi = data;
     });
   }
+  layDSGioTruc(lichTrucId: any) {
+    this.giotrucService.getGTbyLT(lichTrucId).subscribe({
+      next: (data) => {
+        this.gioTrucList = data;
+      },
+      error: (error) => {
+        console.error('Lỗi khi lấy danh sách giờ trực:', error);
+      },
+    });
+  }
 
   loadLichTrucList(bacSiId: any): void {
     this.lichTrucService.getLTbyBS(bacSiId).subscribe((data) => {
       this.lichTrucList = data;
     });
   }
-  chonNgayKham(ngayTruc: any) {
-    this.selectedNgayTruc = ngayTruc;
-
-    // Đặt giá trị mặc định cho giờ khám (hoặc bạn có thể thiết kế logic riêng)
-    this.selectedGioTruc = null;
+  onNgayTrucSelectionChange() {
+    // Lấy giờ trực tương ứng với ngày trực đã chọn
+    this.layDSGioTruc(this.selectedNgayTruc.id);
   }
-
-  // Xử lí sự kiện khi chọn giờ khám
-  chonGioKham(gioTruc: any) {
-    this.selectedGioTruc = gioTruc;
-  }
-  chonLichTruc(id: any) {
-    this.router.navigate(['nguoidung/lichkham', id]);
+  chonLichTruc(gioTrucId: any) {
+    sessionStorage.setItem('gioTrucId', gioTrucId);
+    this.router.navigate(['nguoidung/lichkham']);
   }
 }

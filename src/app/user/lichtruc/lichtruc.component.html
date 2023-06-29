@@ -1,45 +1,19 @@
-<p>lichtruc works!</p>
-<p>lichtruc works!</p>
-<p>lichtruc works!</p>
-<!--
+<mat-toolbar color="primary">
+  <span class="toolbar-title">Thông lịch đặt khám</span>
+  <span class="spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>description</mat-icon>
+  </button>
+</mat-toolbar>
 <div *ngIf="lichTrucList">
-  <h2>Thông tin lịch khám</h2>
-  <p>{{ bacSi?.tenBacSi }}</p>
-  <table class="schedule-table-small">
-    <thead>
-      <tr>
-        <th>Ngày khám</th>
-        <th>Giờ khám</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let lichTruc of lichTrucList" (click)="chonLichTruc(lichTruc)">
-        <td>{{ lichTruc.ngayTruc | date: "dd/MM/yyyy" }}</td>
-        <td>{{ lichTruc.gioTruc }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div> -->
-
-<div *ngIf="lichTrucList">
-  <h2>Thông tin lịch khám</h2>
-  <p>{{ bacSi?.tenBacSi }}</p>
   <mat-card>
-    <mat-form-field
-      appearance="outline"
-      style="max-width: 800px; margin-top: 2%"
-    >
-      <mat-label>Mô tả triệu chứng</mat-label>
-      <textarea
-        matInput
-        placeholder="Nhập mô tả triệu chứng"
-        rows="5"
-      ></textarea>
-    </mat-form-field>
+    <p>
+      <mat-icon style="vertical-align: middle; margin: 1px">person</mat-icon>
+      <strong>Bác sĩ:</strong>{{ bacSi?.tenBacSi }}
+    </p>
+    
     <thead>
-      <tr>
-        <th>Ngày khám</th>
-      </tr>
+      <th>Ngày khám</th>
     </thead>
     <tbody>
       <td>
@@ -50,7 +24,10 @@
           style="margin: 10px"
         >
           <mat-label>Ngày khám</mat-label>
-          <mat-select [(value)]="selectedNgayTruc">
+          <mat-select
+            [(value)]="selectedNgayTruc"
+            (selectionChange)="onNgayTrucSelectionChange()"
+          >
             <mat-option
               *ngFor="let lichTruc of lichTrucList"
               [value]="lichTruc"
@@ -61,23 +38,19 @@
         </mat-form-field>
       </td>
     </tbody>
-
     <thead>
-      <tr>
-        <th>Giờ khám</th>
-      </tr>
+      <th>Giờ khám</th>
     </thead>
     <tbody>
       <td>
         <div class="full-width" style="margin: 10px">
-          <div>
+          <div class="time-grid">
             <button
-              mat-stroked-button
-              color="primary"
-              *ngFor="let lichTruc of lichTrucList"
-              mat-button
-              [ngClass]="{ selected: lichTruc.ngayTruc === selectedNgayTruc }">
-              {{ lichTruc.gioTruc }}
+              mat-raised-button color="accent"
+              *ngFor="let gio of gioTrucList"
+              (click)="chonLichTruc(gio.id)"
+            >
+              {{ gio.gioTruc }}
             </button>
           </div>
         </div>
@@ -85,4 +58,4 @@
     </tbody>
   </mat-card>
 </div>
-<!-- (click)="chonLichTruc(lichTruc)" -->
+<!--  -->

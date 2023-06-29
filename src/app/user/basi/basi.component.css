@@ -7,8 +7,7 @@
 mat-card {
   width: 300px;
   margin-bottom: 20px;
-  
-
+  margin-right: 20%;
 
 }
 
@@ -35,4 +34,19 @@ mat-card-content {
 p {
   margin-bottom: 5px;
   color: rgb(4, 6, 22);
+}
+mat-toolbar {
+  margin-top: 45px;
+}
+.cell-clickable {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cell-clickable:active {
+  background-color: lightgray;
+}
+.d-flex {
+  display: flex;
+  justify-content: space-between;
 }

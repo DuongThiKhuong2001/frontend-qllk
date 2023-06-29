@@ -37,7 +37,8 @@ export class HosoComponent implements OnInit {
       this.loadHoSo();
     });
   }
-  continueHoso() {
+  continueHoso(id: any) {
+    sessionStorage.setItem('hosoId', id);
     this.router.navigate(['nguoidung/cosoyte']);
   }
 }

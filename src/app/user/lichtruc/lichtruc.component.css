@@ -18,7 +18,10 @@
   background-color: #2897aa;
   color: #fff;
 } */
-/* CSS cho phần tổng thể */
+/* CSS cho phần tổng thể */mat-toolbar {
+  margin-top: 50px;
+}
+
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -26,10 +29,14 @@
   justify-content: center;
 }
 
-h2 {
-  margin-bottom: 10px;
+p {
+  margin-top: 10px;
+  margin-right: 80%;
+  color: rgb(84, 49, 180);
 }
-
+strong{
+  color: rgb(19, 19, 20);
+}
 /* CSS cho phần ngày khám */
 .date-field {
   margin-bottom: 20px;
@@ -88,7 +95,7 @@ mat-card {
   box-shadow: 0 0 100px rgba(227, 216, 248, 0.878);
   border-radius: 10px;
   text-align: center;
-  height: 400px;
+  height: 500px;
 
 }
 .card-container {
@@ -112,10 +119,22 @@ mat-card {
 }
 button{
   margin: 16px;
+
 }
 .selected {
   font-weight: bold;
- color: blue;
- 
-  /* Hoặc thêm hiệu ứng khác tùy ý */
+  color: rgb(34, 34, 231);
+}
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Định nghĩa 3 cột với độ rộng bằng nhau */
+  grid-gap: 10px;
+  /* Khoảng cách giữa các ô */
+}
+
+.time-slot {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
 }
