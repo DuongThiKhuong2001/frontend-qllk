@@ -1,58 +1,45 @@
-<p>lichkham</p>
-<p>lichkham</p>
-<p>lichkham</p>
-<mat-card>
-  <mat-card>
-  <mat-form-field
-      appearance="outline"
-      style="max-width: 800px; margin-top: 2%"
-    >
-      <mat-label>Mô tả triệu chứng</mat-label>
-      <textarea
-        matInput
-        placeholder="Nhập mô tả triệu chứng"
-        rows="5"
-      ></textarea>
-    </mat-form-field>
-    </mat-card>
-  <mat-card-header>
-    <mat-card-title>Lịch Khám</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <table mat-table class="mat-elevation-z8">
+<div class="lichkham">
+  <div class="lichkham-item">
+    <p>lichkham</p>
+    <p>lichkham</p>
+    <p>lichkham</p>
+  </div>
+  <mat-card class="mat-card">
+    <div class="mat-card-item">
+      <mat-form-field appearance="outline">
+        <mat-label>Mô tả triệu chứng</mat-label>
+        <textarea matInput placeholder="Nhập mô tả triệu chứng" rows="5"></textarea>
+      </mat-form-field>
+    </div>
+    <mat-card-header class="mat-card-header">
+      <mat-card-title class="mat-card-title">Lịch Khám</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="mat-card-content">
 
-      <!-- BacSi Column -->
-      <ng-container matColumnDef="bacSi">
-        <th mat-header-cell *matHeaderCellDef> Bác Sĩ </th>
-        <td mat-cell *matCellDef="let lichkham"> {{lichkham.bacSi?.tenBacSi}} </td>
-      </ng-container>
+      <table mat-table [dataSource]="lichkhamData"class="mat-table mat-elevation-z8">
+        <ng-container matColumnDef="chuyenKhoa">
+          <th mat-header-cell *matHeaderCellDef>Chuyên Khoa</th>
+          <td mat-cell *matCellDef="let lichkhamItem">{{ lichkhamItem?.tenChuyenKhoa }}</td>
+        </ng-container>
+        <ng-container matColumnDef="bacSi">
+          <th mat-header-cell *matHeaderCellDef>Bác Sĩ</th>
+          <td mat-cell *matCellDef="let lichkhamItem">{{ lichkhamItem?.tenBacSi }}</td>
+        </ng-container>
 
-      <!-- NgayKham Column -->
-      <ng-container matColumnDef="ngayTruc">
-        <th mat-header-cell *matHeaderCellDef> Ngày Khám </th>
-        <td mat-cell *matCellDef="let lichkham"> {{lichkham.licTruc?.ngayTruc | date: 'dd/MM/yyyy'}} </td>
-      </ng-container>
+        <ng-container matColumnDef="ngayKham">
+          <th mat-header-cell *matHeaderCellDef>Ngày Khám</th>
+          <td mat-cell *matCellDef="let lichkhamItem">{{ lichkhamItem?.ngayTruc | date : "dd/MM/yyyy" }}</td>
+        </ng-container>
 
-      <!-- GioKham Column -->
-      <ng-container matColumnDef="gioTruc">
-        <th mat-header-cell *matHeaderCellDef> Giờ Khám </th>
-        <td mat-cell *matCellDef="let lichkham"> {{lichkham.lichTruc?.gioTruc}} </td>
-      </ng-container>
+        <ng-container matColumnDef="gioKham">
+          <th mat-header-cell *matHeaderCellDef>Giờ Khám</th>
+          <td mat-cell *matCellDef="let lichkhamItem">{{ lichkhamItem?.gioTruc }}</td>
+        </ng-container>
 
-      <!-- HoSo Column -->
-      <ng-container matColumnDef="hoSo">
-        <th mat-header-cell *matHeaderCellDef> Hồ Sơ </th>
-        <td mat-cell *matCellDef="let lichkham"> {{lichkham.hoSo.name}} </td>
-      </ng-container>
-
-      <!-- MoTa Column -->
-      <ng-container matColumnDef="moTa">
-        <th mat-header-cell *matHeaderCellDef> Mô Tả </th>
-        <td mat-cell *matCellDef="let lichkham"> {{lichkham.moTa}} </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  </mat-card-content>
-</mat-card>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let lichkhamItem; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+    <button mat-raised-button color="primary" (click)="addChuyenKhoa()">Chọn chuyên khoa</button>
+  </mat-card>
+</div>

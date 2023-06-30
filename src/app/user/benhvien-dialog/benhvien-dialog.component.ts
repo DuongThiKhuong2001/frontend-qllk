@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CosoyteService } from 'src/app/_services/cosoyte.service';
+import { StorageService } from 'src/app/_services/storage.service';
 
 @Component({
   selector: 'app-benh-vien-dialog',
@@ -15,7 +16,8 @@ export class BenhVienDialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private cosoyteService: CosoyteService,
     private router: Router,
-    private dialogRef: MatDialogRef<BenhVienDialogComponent>
+    private dialogRef: MatDialogRef<BenhVienDialogComponent>,
+    private storageService: StorageService
   ) {}
   ngOnInit() {
     this.loadBenhVienList();
@@ -27,8 +29,10 @@ export class BenhVienDialogComponent {
     });
   }
   chonBenhVien(id: any) {
-    sessionStorage.setItem('benhvienId', id);
-    this.router.navigate(['/nguoidung/chuyenkhoa', id]);
-    this.dialogRef.close();
+    this.cosoyteService.getCosoyteById(id).subscribe((data: any) => {
+      this.storageService.saveToSession('benhvien', data);
+      this.router.navigate(['/nguoidung/chuyenkhoa', id]);
+      this.dialogRef.close();
+    });
   }
 }

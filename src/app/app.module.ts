@@ -36,7 +36,7 @@ import { BacsiComponent } from './user/basi/basi.component';
 import { LichkhamComponent } from './user/lichkham/lichkham.component';
 import { LichTrucComponent } from './user/lichtruc/lichtruc.component';
 import { LichKhamChuyenKhoaComponent} from './user/lichkhamchuyenkhoa/lichkhamchuyenkhoa.component';
-
+import { DanhsachlichkhamComponent } from './user/danhsachlichkham/danhsachlichkham.component';
 
 
 
@@ -65,6 +65,7 @@ import { LichKhamChuyenKhoaComponent} from './user/lichkhamchuyenkhoa/lichkhamch
     LichkhamComponent,
     LichTrucComponent,
     LichKhamChuyenKhoaComponent,
+    DanhsachlichkhamComponent,
   ],
   imports: [
     BrowserModule,

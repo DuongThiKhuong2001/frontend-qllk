@@ -11,7 +11,7 @@
       <mat-icon style="vertical-align: middle; margin: 1px">person</mat-icon>
       <strong>Bác sĩ:</strong>{{ bacSi?.tenBacSi }}
     </p>
-    
+
     <thead>
       <th>Ngày khám</th>
     </thead>
@@ -48,7 +48,7 @@
             <button
               mat-raised-button color="accent"
               *ngFor="let gio of gioTrucList"
-              (click)="chonLichTruc(gio.id)"
+              (click)="chonGioTruc(gio.id)"
             >
               {{ gio.gioTruc }}
             </button>

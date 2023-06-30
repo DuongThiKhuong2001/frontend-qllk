@@ -1,5 +1,6 @@
+import { StorageService } from 'src/app/_services/storage.service';
 import { Router } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -7,8 +8,12 @@ import { Component } from '@angular/core';
   templateUrl: './userhome.component.html',
   styleUrls: ['./userhome.component.css'],
 })
-export class UserhomeComponent {
-  constructor(private router: Router) { };
+export class UserhomeComponent implements OnInit {
+  constructor(private router: Router, private storageService:StorageService) { }
+  ngOnInit(): void {
+    sessionStorage.clear();
+  }
+;
 
   bookcare() {
        this.router.navigate(['nguoidung/hoso']);

@@ -13,7 +13,7 @@ export class GiotrucService {
     return this.http.get(`${API_URL}/giotruc`);
   }
 
-  getGioTrucById(id: number): Observable<any> {
+  getGioTrucById(id: any): Observable<any> {
     return this.http.get(`${API_URL}/giotruc/${id}`);
   }
 

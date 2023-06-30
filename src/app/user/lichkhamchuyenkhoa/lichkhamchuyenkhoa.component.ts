@@ -7,33 +7,7 @@ import { LichKhamChuyenKhoaService } from 'src/app/_services/lichkhamchuyenkhoa.
   templateUrl: './lichkhamchuyenkhoa.component.html',
   styleUrls: ['./lichkhamchuyenkhoa.component.css'],
 })
-// export class LichKhamChuyenKhoaComponent implements OnInit {
-//   lichKhamList: any[] | undefined;
-//   dataSource: any;
-//   hoSo: any;
-//   lichKham: any;
 
-//   constructor(
-//     private lichKhamChuyenKhoaService: LichKhamChuyenKhoaService,
-//     private route: ActivatedRoute
-//   ) {}
-
-//   ngOnInit(): void {
-//     this.route.params.subscribe((params) => {
-//       const chuyenKhoaId = params['id'];
-//       this.loadLichKhamChuyenKhoaList(chuyenKhoaId);
-//     });
-//   }
-
-//  loadLichKhamChuyenKhoaList(chuyenKhoaId: any): void {
-//   this.lichKhamChuyenKhoaService
-//     .getLKCKbyLKCK(chuyenKhoaId)
-//     .subscribe((data) => {
-//       this.dataSource = data;
-//     });
-// }
-
-// }
 export class LichKhamChuyenKhoaComponent implements OnInit {
   dataSource!: MatTableDataSource<any>;
   displayedColumns: string[] = ['chuyenKhoa', 'lichKham'];

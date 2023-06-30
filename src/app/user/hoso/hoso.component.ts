@@ -1,3 +1,4 @@
+import { StorageService } from 'src/app/_services/storage.service';
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -16,7 +17,7 @@ export class HosoComponent implements OnInit {
   constructor(
     private hoSoService: HoSoService,
     private router: Router,
-    private datePipe: DatePipe
+    private storageService:StorageService
   ) {}
 
   ngOnInit(): void {
@@ -25,7 +26,6 @@ export class HosoComponent implements OnInit {
   loadHoSo() {
     this.hoSoService.getHoSo().subscribe((data: any) => {
       this.hoSo = data;
-      console.log(this.hoSo);
     });
   }
   createHoso() {
@@ -38,7 +38,10 @@ export class HosoComponent implements OnInit {
     });
   }
   continueHoso(id: any) {
-    sessionStorage.setItem('hosoId', id);
-    this.router.navigate(['nguoidung/cosoyte']);
+    this.hoSoService.getHoSoById(id).subscribe((data: any) => {
+      this.storageService.saveToSession('hoso', data);
+      this.router.navigate(['nguoidung/cosoyte']);
+    });
+
   }
 }

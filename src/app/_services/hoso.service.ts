@@ -27,7 +27,7 @@ export class HoSoService {
     return this.http.delete(`${API_URL}/hoso/${id}`);
   }
 
-  // getHoSoByCode(code: number): Observable<any> {
-  //   return this.http.get(`${API_URL}/hoso/${code}`);
-  // }
+  getHoSoById(code: number): Observable<any> {
+    return this.http.get(`${API_URL}/hoso/${code}`);
+  }
 }

@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { LichTrucService } from 'src/app/_services/lichtruc.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BasiService } from 'src/app/_services/bacsi.service';
+import { StorageService } from 'src/app/_services/storage.service';
 
 @Component({
   selector: 'app-lich-truc',
@@ -20,7 +21,8 @@ export class LichTrucComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private giotrucService: GiotrucService,
-    private basiService: BasiService // private chuyenkhoaService: ChuyenkhoaService
+    private basiService: BasiService,
+    private storageService:StorageService
   ) {}
 
   ngOnInit(): void {
@@ -55,9 +57,14 @@ export class LichTrucComponent implements OnInit {
   onNgayTrucSelectionChange() {
     // Lấy giờ trực tương ứng với ngày trực đã chọn
     this.layDSGioTruc(this.selectedNgayTruc.id);
+    this.lichTrucService.getLichTrucById(this.selectedNgayTruc.id).subscribe((data: any) => {
+      this.storageService.saveToSession('lichtruc', data);
+    });
   }
-  chonLichTruc(gioTrucId: any) {
-    sessionStorage.setItem('gioTrucId', gioTrucId);
-    this.router.navigate(['nguoidung/lichkham']);
+  chonGioTruc(gioTrucId: any) {
+    this.giotrucService.getGioTrucById(gioTrucId).subscribe((data: any) => {
+      this.storageService.saveToSession('giotruc', data);
+      this.router.navigate(['nguoidung/lichkham']);
+    });
   }
 }
