@@ -1,16 +1,12 @@
-<div class="lichkham">
-  <div class="lichkham-item">
-    <p>lichkham</p>
-    <p>lichkham</p>
-    <p>lichkham</p>
-  </div>
+
+<mat-toolbar color="primary">
+  <span class="toolbar-title">Thông lịch đặt khám</span>
+  <span class="spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>description</mat-icon>
+  </button>
+</mat-toolbar><div class="lichkham">
   <mat-card class="mat-card">
-    <div class="mat-card-item">
-      <mat-form-field appearance="outline">
-        <mat-label>Mô tả triệu chứng</mat-label>
-        <textarea matInput placeholder="Nhập mô tả triệu chứng" rows="5"></textarea>
-      </mat-form-field>
-    </div>
     <mat-card-header class="mat-card-header">
       <mat-card-title class="mat-card-title">Lịch Khám</mat-card-title>
     </mat-card-header>
@@ -35,11 +31,28 @@
           <th mat-header-cell *matHeaderCellDef>Giờ Khám</th>
           <td mat-cell *matCellDef="let lichkhamItem">{{ lichkhamItem?.gioTruc }}</td>
         </ng-container>
+        <ng-container matColumnDef="giaKham">
+          <th mat-header-cell *matHeaderCellDef>Giá Khám</th>
+          <td mat-cell *matCellDef="let lichkhamItem">{{ lichkhamItem?.tienKham }}</td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let lichkhamItem">
+            <button mat-icon-button color="warn" (click)="xoaLichKham(lichkhamItem)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let lichkhamItem; columns: displayedColumns;"></tr>
       </table>
+      <div>
+        <p>Tổng giá khám: {{ tongGiaKham }}</p>
+      </div>
+      <button mat-raised-button color="primary" (click)="addChuyenKhoa()">Thêm chuyên khoa</button>
+      <button mat-raised-button color="primary" (click)="datLich()">Xác nhận đặt lịch</button>
     </mat-card-content>
-    <button mat-raised-button color="primary" (click)="addChuyenKhoa()">Chọn chuyên khoa</button>
+
   </mat-card>
 </div>

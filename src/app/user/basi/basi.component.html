@@ -5,63 +5,38 @@
     <mat-icon>description</mat-icon>
   </button>
 </mat-toolbar>
+
 <div class="d-flex">
-  <div>
-    <div
-      class="card"
-      style="
-        margin-bottom: 5%;
-        margin-top: 10%;
-        margin-left: 16px;
-        width: 18rem;
-      "
-    >
-      <div class="card-body text-center">
-        <div class="justify-content-between">
-          <div class="card-title">Thông tin khám</div>
-          <div><strong>Bệnh viện:</strong></div>
-          <b>{{ benhVien?.tenBenhVien }}</b>
-           <div><strong>Chuyên khoa:</strong></div>
-          <b>{{ chuyenKhoa?.tenChuyenKhoa }}</b>
-        </div>
-        <div class="card"></div>
+  <div class="card">
+    <div class="card-body text-center">
+      <div class="justify-content-between">
+        <div class="card-title">Thông tin khám</div>
+        <div><strong>Bệnh viện:</strong></div>
+        <b>{{ benhVien?.tenBenhVien }}</b>
+        <div><strong>Chuyên khoa:</strong></div>
+        <b>{{ chuyenKhoa?.tenChuyenKhoa }}</b>
       </div>
+      <div class="card"></div>
     </div>
   </div>
-  <div
-    style="
-      overflow-y: scroll;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 2%;
-    "
-  >
-    <div *ngIf="doctors">
-      <h2>Danh sách bác sĩ</h2>
 
-      <div class="doctor-container" *ngFor="let doctor of doctors">
-        <mat-card (click)="chonBacsi(doctor.id)" class="cell-clickable">
-          <mat-card-header>
-            <div mat-card-avatar class="doctor-avatar"></div>
-          </mat-card-header>
-          <mat-card-content>
-            <p style="color: rgb(32, 53, 236)">
-              <strong>{{ doctor.tenBacSi }}</strong>
-            </p>
-            <p><strong>Địa chỉ:</strong>{{ doctor.diaChi }}</p>
-            <p>
-              <strong>Giới tính:</strong>{{ doctor.gioiTinh ? "Nam" : "Nữ" }}
-            </p>
-            <p><strong>Giá khám:</strong> {{ doctor.giaKham }}</p>
-            <p><strong>Số điện thoại:</strong>{{ doctor.soDienThoai }}</p>
-            <p>
-              <strong>Chuyên khoa:</strong>
-              {{ doctor.chuyenKhoa?.tenChuyenKhoa }}
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </div>
+  <div class="doctor-list">
+    <h2>Danh sách bác sĩ</h2>
+
+    <div class="doctor-container" *ngIf="doctors">
+      <mat-card *ngFor="let doctor of doctors" (click)="chonBacsi(doctor.id)" class="cell-clickable">
+        <mat-card-header>
+          <div mat-card-avatar class="doctor-avatar"></div>
+        </mat-card-header>
+        <mat-card-content>
+          <p style="color: rgb(32, 53, 236)"><strong>{{ doctor.tenBacSi }}</strong></p>
+          <p><strong>Địa chỉ:</strong> {{ doctor.diaChi }}</p>
+          <p><strong>Giới tính:</strong> {{ doctor.gioiTinh ? "Nam" : "Nữ" }}</p>
+          <p><strong>Giá khám:</strong> {{ doctor.giaKham }}</p>
+          <p><strong>Số điện thoại:</strong> {{ doctor.soDienThoai }}</p>
+          <p><strong>Chuyên khoa:</strong> {{ doctor.chuyenKhoa?.tenChuyenKhoa }}</p>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </div>

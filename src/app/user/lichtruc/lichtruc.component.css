@@ -18,7 +18,8 @@
   background-color: #2897aa;
   color: #fff;
 } */
-/* CSS cho phần tổng thể */mat-toolbar {
+/* CSS cho phần tổng thể */
+mat-toolbar {
   margin-top: 50px;
 }
 

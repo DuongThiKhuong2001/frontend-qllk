@@ -18,18 +18,22 @@ export class BacsiComponent implements OnInit {
     private basiService: BasiService,
     private route: ActivatedRoute,
     private router: Router,
-    private cosoyteService: CosoyteService,
     private chuyenkhoaService: ChuyenkhoaService,
     private storageService:StorageService
   ) {}
 
   ngOnInit(): void {
     this.benhVien = this.storageService.getFromSession('benhvien');
-    this.chuyenKhoa = this.storageService.getFromSession('chuyenkhoa');
     this.route.params.subscribe((params) => {
       const chuyenKhoaId = params['id'];
       this.loadDoctorList(chuyenKhoaId);
+      this.layChuyenKhoa(chuyenKhoaId)
     });
+  }
+  layChuyenKhoa(id: any){
+    this.chuyenkhoaService.getCKById(id).subscribe((data)=>{
+      this.chuyenKhoa = data
+    })
   }
   loadDoctorList(chuyenKhoaId: any): void {
     this.basiService.getBSByCK(chuyenKhoaId).subscribe((data) => {
@@ -38,7 +42,7 @@ export class BacsiComponent implements OnInit {
   }
   chonBacsi(id: any) {
     this.basiService.getBSById(id).subscribe((data: any) => {
-      this.storageService.saveToSession('bacsi', data);
+      // this.storageService.saveToSession('bacsi', data);
       this.router.navigate(['nguoidung/lichtruc', id]);
     });
 

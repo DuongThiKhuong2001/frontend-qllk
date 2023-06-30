@@ -1,52 +1,69 @@
+/* CSS for mat-toolbar */
+.mat-toolbar {
+  margin-top: 50px;
+}
+
+.toolbar-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* CSS for card */
+.card {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  padding: 16px;
+  margin-left: 16px;
+  margin-top: 20px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* CSS for doctor container */
 .doctor-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-mat-card {
-  width: 300px;
-  margin-bottom: 20px;
-  margin-right: 20%;
-
-}
-
-mat-card-header {
-  display: flex;
-  align-items: center;
-
-}
-
-.doctor-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #ccc;
-  margin-right: 10px;
-}
-
-mat-card-content {
-  padding: 10px;
-  justify-content: space-between;
-  text-align: center;
-}
-
-p {
-  margin-bottom: 5px;
-  color: rgb(4, 6, 22);
-}
-mat-toolbar {
-  margin-top: 45px;
-}
 .cell-clickable {
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.cell-clickable:active {
-  background-color: lightgray;
+/* CSS for doctor avatar */
+.doctor-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #ccc;
 }
+
+/* Optional CSS for additional styling */
 .d-flex {
   display: flex;
-  justify-content: space-between;
+}
+
+.doctor-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.overflow-scroll {
+  overflow-y: scroll;
+  margin-top: 2%;
 }

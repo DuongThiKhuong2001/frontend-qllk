@@ -1,73 +1,64 @@
-/* chuyen-khoa-table.component.css */
-mat-table {
-  max-width: 500%;
+
+
+.toolbar-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
 }
 
+.spacer {
+  flex: 1;
+}
+
+/* CSS for card */
+.card {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  padding: 16px;
+  margin-left: 16px;
+  margin-top: 20px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* CSS for mat-card */
+.mat-card-container {
+  margin-left: 16px;
+  flex: 1;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 .table-container {
-  height: 300px; /* Đặt chiều cao cố định cho container */
   overflow: auto;
-   display: flex;
-  justify-content: center;
-  background-color: rgb(242, 244, 245);
-  padding: 10px;/* Thêm chức năng cuộn cho container nếu nội dung vượt quá chiều cao */
-}
-mat-toolbar {
-  margin-top: 45px;
+  max-height: 300px; /* Đặt chiều cao tùy ý cho thanh cuộn */
 }
 
-
-/* Loại bỏ padding và margin của bảng */
-table.mat-table {
-  margin: 0;
-  padding: 0;
+.mat-elevation-z8 {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Định dạng cho header cell */
-th.mat-header-cell {
-  font-weight: bold;
-  background-color: #41badf;
-}
-
-/* Định dạng cho cell */
-td.mat-cell {
-  padding: 10px;
-  border-bottom: 1px solid #4bc8d1;
-}
-
-/* Định dạng cho hàng đầu tiên của bảng */
-tr.mat-header-row {
-  background-color: #2db6c9;
-}
-
-/* Định dạng cho các hàng */
-tr.mat-row {
-  background-color: #3beedf;
-}
-
-/* Định dạng cho hover cell */
-tr.mat-row:hover {
-  background-color: #4c85e7;
-}
-.mat-card-container {
-  padding: 40px;
-  margin: 20px;
-  justify-content: left;
-  margin-right: 40%;
-  width: 1000%;
-  background-color: #c6eef3;
-
-}
 .cell-clickable {
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.cell-clickable:active {
-  background-color: lightgray;
-}
+/* Optional CSS for additional styling */
 .d-flex {
   display: flex;
-  justify-content: space-between;
 }
-/* Các quy tắc CSS khác cho bảng */
+
+.mat-row,
+.mat-header-row {
+  display: flex;
+  align-items: center;
+}
+mat-toolbar {
+  margin-top: 50px;
+}

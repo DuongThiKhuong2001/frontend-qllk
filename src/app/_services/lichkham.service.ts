@@ -17,8 +17,8 @@ export class LichKhamService {
     return this.http.get(`${API_URL}/lichkham/${id}`);
   }
 
-  createLichKham(data: any): Observable<any> {
-    return this.http.post(`${API_URL}/lichkham`, data);
+  createListLichKham(data: any): Observable<any> {
+    return this.http.post(`${API_URL}/lichkham/danhsach`, data);
   }
 
   updateLichKham(id: number, data: any): Observable<any> {

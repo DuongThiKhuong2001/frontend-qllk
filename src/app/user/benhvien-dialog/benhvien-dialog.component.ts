@@ -30,7 +30,7 @@ export class BenhVienDialogComponent {
   }
   chonBenhVien(id: any) {
     this.cosoyteService.getCosoyteById(id).subscribe((data: any) => {
-      this.storageService.saveToSession('benhvien', data);
+       this.storageService.saveToSession('benhvien', data);
       this.router.navigate(['/nguoidung/chuyenkhoa', id]);
       this.dialogRef.close();
     });

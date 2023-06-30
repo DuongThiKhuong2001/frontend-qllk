@@ -57,9 +57,9 @@ export class LichTrucComponent implements OnInit {
   onNgayTrucSelectionChange() {
     // Lấy giờ trực tương ứng với ngày trực đã chọn
     this.layDSGioTruc(this.selectedNgayTruc.id);
-    this.lichTrucService.getLichTrucById(this.selectedNgayTruc.id).subscribe((data: any) => {
-      this.storageService.saveToSession('lichtruc', data);
-    });
+    // this.lichTrucService.getLichTrucById(this.selectedNgayTruc.id).subscribe((data: any) => {
+    //   this.storageService.saveToSession('lichtruc', data);
+    // });
   }
   chonGioTruc(gioTrucId: any) {
     this.giotrucService.getGioTrucById(gioTrucId).subscribe((data: any) => {

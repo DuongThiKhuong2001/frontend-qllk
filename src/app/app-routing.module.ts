@@ -1,4 +1,3 @@
-import { LichKhamChuyenKhoaComponent} from './user/lichkhamchuyenkhoa/lichkhamchuyenkhoa.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormdesignComponent } from './user/formdesign/formdesign.component';
@@ -47,8 +46,6 @@ const routes: Routes = [
       { path: 'chuyenkhoa/:id', component: ChuyenkhoaComponent },
       { path: 'bacsi/:id', component: BacsiComponent },
       { path: 'lichkham', component: LichkhamComponent },
-      { path: 'lichkhamchuyenkhoa', component: LichKhamChuyenKhoaComponent },
-
       { path: 'lichtruc/:id', component: LichTrucComponent },
     ],
   },
