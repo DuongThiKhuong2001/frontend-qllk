@@ -13,17 +13,20 @@
 /* CSS for card */
 .card {
   background-color: rgb(238, 251, 252);
-  border-radius: 4px;
   box-shadow: 0 2px 4px rgba(233, 219, 219, 0.1);
-  margin-bottom: 16px;
+  margin-bottom: 1000px;
   padding: 16px;
   margin-left: 16px;
-  margin-top: 20px;
+  margin-top: 40px;
+
+}
+.text-left {
+  text-align: left;
 }
 
 .card-title {
   font-size: 18px;
-
+ 
 
 }
 
@@ -32,11 +35,13 @@
   margin-left: 16px;
   flex: 1;
   margin-right: 20px;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 20px;
+
 }
 
 .table-container {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: auto;
   max-height: 300px; /* Đặt chiều cao tùy ý cho thanh cuộn */
 }
@@ -61,4 +66,7 @@
 }
 mat-toolbar {
   margin-top: 50px;
+}
+h2{
+  margin-right: 78%;
 }

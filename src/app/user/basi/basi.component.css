@@ -1,8 +1,3 @@
-/* CSS for mat-toolbar */
-.mat-toolbar {
-  margin-top: 50px;
-}
-
 .toolbar-title {
   font-size: 20px;
   font-weight: bold;
@@ -15,36 +10,48 @@
 
 /* CSS for card */
 .card {
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 16px;
+  background-color: rgb(238, 251, 252);
+  box-shadow: 0 2px 4px rgba(233, 219, 219, 0.1);
+  margin-bottom: 1000px;
   padding: 16px;
   margin-left: 16px;
-  margin-top: 20px;
-}
+  margin-top: 65px;
 
+}
+.text-left {
+  text-align: left;
+}
 .card-title {
   font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 8px;
+}
+mat-card {
+
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 100px rgba(163, 225, 236, 0.878);
+}
+/* CSS for mat-card */
+.mat-card-container {
+  margin-left: 16px;
+  flex: 1;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-/* CSS for doctor container */
-.doctor-container {
-  margin-bottom: 10px;
+.table-container {
+  overflow: auto;
+  max-height: 300px;
+  /* Đặt chiều cao tùy ý cho thanh cuộn */
+}
+
+.mat-elevation-z8 {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cell-clickable {
   cursor: pointer;
-}
-
-/* CSS for doctor avatar */
-.doctor-avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background-color: #ccc;
 }
 
 /* Optional CSS for additional styling */
@@ -52,18 +59,59 @@
   display: flex;
 }
 
-.doctor-container {
+.mat-row,
+.mat-header-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
-h2 {
-  margin-bottom: 10px;
+mat-toolbar {
+  margin-top: 50px;
 }
 
-.overflow-scroll {
-  overflow-y: scroll;
-  margin-top: 2%;
+/* CSS for doctor card */
+.doctor-list {
+  margin-left: 16px;
+  flex: 1;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.doctor-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #63b8f1;
+}
+
+.scroll-container {
+  overflow-y: auto;
+  max-height: 500px;
+
+  /* Đặt chiều cao tùy ý cho thanh cuộn */
+}
+
+.doctor-container {
+  margin-bottom: 16px;
+}
+
+.doctor-container h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.doctor-container mat-card {
+  margin-bottom: 8px;
+}
+
+.doctor-container mat-card-content {
+  padding: 8px;
+}
+
+.left-align {
+  text-align: left;
+}
+h2{
+  margin-right: 82%;
 }

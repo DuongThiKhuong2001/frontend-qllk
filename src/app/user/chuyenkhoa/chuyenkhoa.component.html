@@ -1,26 +1,21 @@
 <mat-toolbar color="primary">
-  <span class="toolbar-title">Thông tin chuyên khoa</span>
+  <span class="toolbar-title">Thông tin chuyên khoa</span><mat-icon>description</mat-icon>
   <span class="spacer"></span>
   <button mat-icon-button>
-    <mat-icon>description</mat-icon>
   </button>
 </mat-toolbar>
 <div class="d-flex">
-  <div>
-  <div class="card">
-    <div class="card-body text-center">
-      <div class="justify-content-between">
-        <div class="card-title">Thông tin khám</div>
-        <div class="hospital-info">
-          <p>  <strong>CSYT:</strong>{{ benhVien?.tenBenhVien }}</p>
-        </div>
-      </div>
+   <div class="card">
+  <div class="card-body text-left"> <!-- Hoặc "text-center" nếu bạn muốn canh giữa -->
+    <div class="justify-content-between">
+      <div class="card-title"><b>Thông tin khám</b></div>
     </div>
+    <div><strong>Bệnh viện:</strong></div>
+    {{ benhVien?.tenBenhVien }}
   </div>
 </div>
-
-  <p></p>
   <mat-card class="mat-card-container">
+     <h2>Vui lòng chọn Chuyên khoa</h2>
     <div class="table-container">
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="tenChuyenKhoa">
