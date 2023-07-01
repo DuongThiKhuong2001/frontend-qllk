@@ -5,102 +5,98 @@
    <mat-icon>description</mat-icon>
   </button>
 </mat-toolbar>
-<div class="form-container">
-<form [formGroup]="customerform" (ngSubmit)="SaveHoSo()">
-  <mat-card >
-    <mat-card-content >
-       <mat-card-title>
-    <span class="text-center">NHẬP THÔNG TIN BỆNH NHÂN</span>
-  </mat-card-title>
-      <mat-form-field  class="mat-50" appearance="outline" class="full-width" style="margin: 10px;">
-        <mat-label>Họ và Tên</mat-label>
-        <input formControlName="ten" matInput />
-      </mat-form-field>
-      <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;" >
-        <mat-label>Ngày sinh</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="ngaySinh" />
-        <mat-datepicker-toggle
-          matIconSuffix
-          [for]="picker"
-        ></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-
-      <mat-form-field class="mat-50" appearance="outline" class="full-width" style="margin: 10px;">
-        <mat-label>Giới tính</mat-label>
-        <mat-select formControlName="gioiTinh">
-          <mat-option value="Male">Nam</mat-option>
-          <mat-option value="Female">Nữ</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field class="mat-50" appearance="outline" class="full-width"  style="margin: 10px;"  >
-        <mat-label>Số điện thoại</mat-label>
-        <input matInput formControlName="soDienThoai" />
-      </mat-form-field>
-
-      <mat-form-field class="mat-50" appearance="outline" class="full-width" style="margin: 10px;">
-        <mat-label>Nghề nghiệp</mat-label>
-        <input matInput formControlName="ngheNghiep" />
-      </mat-form-field >
-
-      <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;"  >
-        <mat-label>CMND</mat-label>
-        <input matInput formControlName="cmnd" />
-      </mat-form-field>
-       <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;" >
-        <mat-label>Địa chỉ Email</mat-label>
-        <input matInput formControlName="email" />
-      </mat-form-field>
-
-      <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;"  >
-        <mat-label>Dân tộc</mat-label>
-        <input matInput formControlName="danToc" />
-      </mat-form-field>
-      <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;" >
-        <mat-label>Tỉnh/Thành</mat-label>
-
-        <mat-select
-          formControlName="tinh"
-          (selectionChange)="onTinhChange($event.value)"
-        >
-          <mat-option *ngFor="let tinh of tinhList" [value]="tinh.code">
-            {{ tinh.name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;" >
-        <mat-label>Quận/Huyện</mat-label>
-
-        <mat-select
-          formControlName="huyen"
-          (selectionChange)="onHuyenChange($event.value)">
-          <mat-option *ngFor="let huyen of huyenList" [value]="huyen.code">
-            {{ huyen.name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;" >
-        <mat-label>Phường/Xã</mat-label>
-        <mat-select formControlName="xa">
-          <mat-option *ngFor="let xa of xaList" [value]="xa.code">
-            {{ xa.name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field class="mat-50" appearance="outline" class="full-width " style="margin: 10px;"  >
-        <mat-label>Địa chỉ</mat-label>
-        <input matInput formControlName="diaChi" />
-      </mat-form-field>
+<div class="container">
+  <div class="message-card">
+    <mat-card-content>
+      <div class="text-left">
+        Vui lòng cung cấp thông tin chính xác để được phục vụ tốt nhất. Trong trường hợp cung cấp sai thông tin bệnh nhân & điện thoại, việc xác nhận cuộc hẹn sẽ không hiệu lực trước khi đặt khám.
+      </div>
     </mat-card-content>
-      <div style="margin: 2%; text-align: center">
+  </div>
+</div>
+
+
+<div class="form-container">
+  <form [formGroup]="customerform" (ngSubmit)="SaveHoSo()">
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title>
+          <span class="text-center">NHẬP THÔNG TIN BỆNH NHÂN</span>
+        </mat-card-title>
+        <div class="form-field-container">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Họ và Tên</mat-label>
+            <input formControlName="ten" matInput />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Ngày sinh</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="ngaySinh" />
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Giới tính</mat-label>
+            <mat-select formControlName="gioiTinh">
+              <mat-option value="Male">Nam</mat-option>
+              <mat-option value="Female">Nữ</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Số điện thoại</mat-label>
+            <input matInput formControlName="soDienThoai" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Nghề nghiệp</mat-label>
+            <input matInput formControlName="ngheNghiep" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>CMND</mat-label>
+            <input matInput formControlName="cmnd" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Địa chỉ Email</mat-label>
+            <input matInput formControlName="email" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Dân tộc</mat-label>
+            <input matInput formControlName="danToc" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Tỉnh/Thành</mat-label>
+            <mat-select formControlName="tinh" (selectionChange)="onTinhChange($event.value)">
+              <mat-option *ngFor="let tinh of tinhList" [value]="tinh.code">
+                {{ tinh.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Quận/Huyện</mat-label>
+            <mat-select formControlName="huyen" (selectionChange)="onHuyenChange($event.value)">
+              <mat-option *ngFor="let huyen of huyenList" [value]="huyen.code">
+                {{ huyen.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Phường/Xã</mat-label>
+            <mat-select formControlName="xa">
+              <mat-option *ngFor="let xa of xaList" [value]="xa.code">
+                {{ xa.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Địa chỉ</mat-label>
+            <input matInput formControlName="diaChi" />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <div>
         <button style="margin-right: 16px;" mat-raised-button type="submit" color="primary">Lưu</button>
         <button mat-raised-button color="warn" (click)="clearForm()">
           Xóa
         </button>
       </div>
-
-  </mat-card>
-</form></div>
-
+    </mat-card>
+  </form>
+</div>

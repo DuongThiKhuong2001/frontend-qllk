@@ -1,27 +1,119 @@
-  .schedule-table {
-    width: 80%;
-    margin-top: 10%;
-    border-collapse: collapse;
-    margin-bottom: 10%;
-    text-align: center;
-    margin-left : 100px;
-  }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  .schedule-table th,
-  .schedule-table td {
-    padding: 8px;
-    text-align: lef t;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 20%;
-  }
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
 
-  .schedule-table th {
-    background-color: #0b96e7;
-  }
-h2{
-margin-top: 5%;
+.toolbar-title {
+  font-size: 20px;
+}
+
+.icon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mat-card {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.mat-card-header {
+  background-color: #4ea1ff;
+  padding: 10px;
+}
+
+.mat-card-title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.mat-card-content {
+  padding: 10px;
+}
+
+.mat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mat-table th,
+.mat-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.mat-table th {
+  background-color: #c6dbf3;
+}
+
+.icon-button.delete-button {
+  color: #ff0000;
+}
+
+.tong-gia-kham {
+  margin-bottom: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+}
+.mat-stroked-button{
+  margin-bottom: 10px;
+}
+.button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin-right: 20px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.buttonn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin-left: 65%;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+  font-size: 15px;
 
 }
-mat-toolbar {
-  margin-top: 50px;
+.buttonn1{
+  border: none;
+  margin-left: 20%;
+  cursor: pointer;
+  margin-bottom: 40px;
+  display: flex;
 }
+.buttonn:hover {
+  background-color: #0056b3;
+}
+.button:hover {
+  background-color: #0056b3;
+}
+mat-toolbar
+{
+margin-top: 50px;
+}
+p{
+  color: #007bff;
+}
+

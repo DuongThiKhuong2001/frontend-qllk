@@ -80,10 +80,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+    box-shadow: 0 0 100px rgba(90, 185, 230, 0.878);
 }
 
 .img-fluid.card-img {
-  width: 100%;
+  width: 40%;
 }
 
 .card-body {
@@ -94,8 +95,12 @@
   font-weight: bold;
 }
 
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
+.button-container button {
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover,
+.button-container button:focus {
+  background-color: rgb(39, 201, 241);
+  /* Màu nền khi hover hoặc focus */
 }

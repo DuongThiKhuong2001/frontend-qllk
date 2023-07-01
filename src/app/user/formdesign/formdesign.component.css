@@ -1,36 +1,64 @@
-
-mat-card{
-    margin: 25%;
-    margin-top: 5%;
-    box-shadow: 0 0 100px rgba(156, 126, 209, 0.878);
-    border-radius: 10px;
-    text-align: center;
-
-}
-
-.mat-form-field {
-    width: 50%;
-    margin: 1%;
-}
-
-.mat-50{
-    width: 25%;
-    margin: 1%;
-    justify-content: center;
-
-}
-
-button{
-    margin: 2px;
-      justify-content: center;
-      align-items: center;
-}
-.text-center {
+.form-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 140vh;
+}
+
+mat-card {
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 100px;
+  padding: 16px;
+  box-shadow: 0 0 100px  rgb(179, 228, 231);
+
+
+
+}
+
+@media screen and (max-width: 600px) {
+  mat-card {
+    max-width: 100%;
+
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.form-field-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button {
+  margin-top: 2px;
 }
 
 mat-toolbar {
   margin-top: 50px;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.message-card {
+  width: 580px;
+  padding: 10px;
+  background-color: #81c7f0;
+}
+
+.text-left {
+  text-align: left;
 }

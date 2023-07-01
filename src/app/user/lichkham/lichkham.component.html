@@ -1,58 +1,105 @@
-
 <mat-toolbar color="primary">
-  <span class="toolbar-title">Thông lịch đặt khám</span>
+  <span class="toolbar-title">Xác nhận thông tin</span>
   <span class="spacer"></span>
   <button mat-icon-button>
     <mat-icon>description</mat-icon>
   </button>
-</mat-toolbar><div class="lichkham">
-  <mat-card class="mat-card">
-    <mat-card-header class="mat-card-header">
-      <mat-card-title class="mat-card-title">Lịch Khám</mat-card-title>
-    </mat-card-header>
-    <mat-card-content class="mat-card-content">
-
-      <table mat-table [dataSource]="lichkhamData"class="mat-table mat-elevation-z8">
-        <ng-container matColumnDef="chuyenKhoa">
-          <th mat-header-cell *matHeaderCellDef>Chuyên Khoa</th>
-          <td mat-cell *matCellDef="let lichkhamItem">{{ lichkhamItem?.tenChuyenKhoa }}</td>
-        </ng-container>
-        <ng-container matColumnDef="bacSi">
-          <th mat-header-cell *matHeaderCellDef>Bác Sĩ</th>
-          <td mat-cell *matCellDef="let lichkhamItem">{{ lichkhamItem?.tenBacSi }}</td>
-        </ng-container>
-
-        <ng-container matColumnDef="ngayKham">
-          <th mat-header-cell *matHeaderCellDef>Ngày Khám</th>
-          <td mat-cell *matCellDef="let lichkhamItem">{{ lichkhamItem?.ngayTruc | date : "dd/MM/yyyy" }}</td>
-        </ng-container>
-
-        <ng-container matColumnDef="gioKham">
-          <th mat-header-cell *matHeaderCellDef>Giờ Khám</th>
-          <td mat-cell *matCellDef="let lichkhamItem">{{ lichkhamItem?.gioTruc }}</td>
-        </ng-container>
-        <ng-container matColumnDef="giaKham">
-          <th mat-header-cell *matHeaderCellDef>Giá Khám</th>
-          <td mat-cell *matCellDef="let lichkhamItem">{{ lichkhamItem?.tienKham }}</td>
-        </ng-container>
-        <ng-container matColumnDef="actions">
-          <th mat-header-cell *matHeaderCellDef></th>
-          <td mat-cell *matCellDef="let lichkhamItem">
-            <button mat-icon-button color="warn" (click)="xoaLichKham(lichkhamItem)">
-              <mat-icon>delete</mat-icon>
-            </button>
-          </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let lichkhamItem; columns: displayedColumns;"></tr>
-      </table>
-      <div>
-        <p>Tổng giá khám: {{ tongGiaKham }}</p>
+</mat-toolbar>
+<div class="container">
+  <div class="lichkham">
+    <div class="mat-card">
+      <div class="mat-card-header">
+        <h2 class="mat-card-title">Xác nhận Lịch khám</h2>
       </div>
-      <button mat-raised-button color="primary" (click)="addChuyenKhoa()">Thêm chuyên khoa</button>
-      <button mat-raised-button color="primary" (click)="datLich()">Xác nhận đặt lịch</button>
-    </mat-card-content>
+      <div class="mat-card-content">
+        <table class="mat-table">
+          <thead>
+            <tr>
+              <th>Chuyên Khoa</th>
+              <th>Bác Sĩ</th>
+              <th>Ngày Khám</th>
+              <th>Giờ Khám</th>
+              <th>Giá Khám</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let lichkhamItem of lichkhamData">
+              <td>{{ lichkhamItem?.tenChuyenKhoa }}</td>
+              <td>{{ lichkhamItem?.tenBacSi }}</td>
+              <td>{{ lichkhamItem?.ngayTruc | date : "dd/MM/yyyy" }}</td>
+              <td>{{ lichkhamItem?.gioTruc }}</td>
+              <td>{{ lichkhamItem?.tienKham }}</td>
+              <td>
+                <button
+                  class="icon-button delete-button"
+                  (click)="xoaLichKham(lichkhamItem)"
+                >
+                  <i class="material-icons">delete</i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mat-card-footer">
+        <div class="tong-gia-kham">
+          <p>
+            <strong>Tổng giá khám: {{ tongGiaKham }}</strong>
+          </p>
+        </div>
+        <div class="button-group">
+          <button class="button" (click)="addChuyenKhoa()">
+            Thêm chuyên khoa
+          </button>
+        </div>
+      </div>
+    </div>
 
-  </mat-card>
+    <div class="mat-card">
+      <div class="mat-card-header">
+        <h2 class="mat-card-title">Thông tin Bệnh nhân</h2>
+      </div>
+      <div class="mat-card-content">
+        <table class="mat-table">
+          <thead>
+            <tr>
+              <th>Tên</th>
+              <th>Ngày Sinh</th>
+              <th>Giới Tính</th>
+              <th>Số Điện Thoại</th>
+              <th>Nghề Nghiệp</th>
+              <th>CMND</th>
+              <th>Dân Tộc</th>
+              <th>Địa Chỉ</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ hoSo?.ten }}</td>
+              <td>{{ hoSo?.ngaySinh | date : "dd/MM/yyyy" }}</td>
+              <td>{{ hoSo?.gioiTinh }}</td>
+              <td>{{ hoSo?.soDienThoai }}</td>
+              <td>{{ hoSo?.ngheNghiep }}</td>
+              <td>{{ hoSo?.cmnd }}</td>
+              <td>{{ hoSo?.danToc }}</td>
+              <td>{{ hoSo?.diaChi }}</td>
+              <td>{{ hoSo?.email }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
+<div class="button-container">
+  <button class="buttonn" (click)="datLich()">
+    <span class="button-text">Xác nhận đặt lịch</span>
+    <mat-icon>arrow_forward</mat-icon>
+  </button>
+  <button class="buttonn1"  mat-stroked-button color="basic" >
+    Quay lại
+  </button>
+</div>
+

@@ -5,11 +5,11 @@
 
 }
 .mat-aqua{
-  background-color:#ffffff;
+  background-color:#ddd2d2;
   color: black;
 }
 button.checked {
- background-color: rgb(75, 161, 177);
+ background-color: rgb(179, 228, 231);
   color:black
 }
 mat-toolbar{
@@ -19,9 +19,6 @@ mat-toolbar{
   box-shadow: 0 0 100px rgba(65, 62, 62, 0.878);
 
 
-}
-.custom-button {
-  border: 1px solid rgb(119, 114, 167);
 }
 
 

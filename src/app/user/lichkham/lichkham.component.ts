@@ -14,6 +14,7 @@ export class LichkhamComponent implements OnInit {
   lichkhamData: any[] = [];
   lichKhamItem: any;
   tongGiaKham: number = 0;
+  hoSo: any;
 
   displayedColumns: string[] = [
     'chuyenKhoa',
@@ -23,6 +24,17 @@ export class LichkhamComponent implements OnInit {
     'giaKham',
     'actions',
   ];
+  displayeColumns: string[] = [
+    'ten',
+    'ngaySinh',
+    'gioiTinh',
+    'soDienThoai',
+    'ngheNghiep',
+    'cmnd',
+    'danToc',
+    'diaChi',
+    'email',
+  ];
   constructor(
     private storageService: StorageService,
     private router: Router,
@@ -31,7 +43,7 @@ export class LichkhamComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const hoso = this.storageService.getFromSession('hoso');
+    this.hoSo = this.storageService.getFromSession('hoso');
     const giotruc = this.storageService.getFromSession('giotruc');
     const lichKhamItem = {
       tenBacSi: giotruc?.lichTruc.bacSi.tenBacSi,
@@ -41,7 +53,8 @@ export class LichkhamComponent implements OnInit {
       gioTruc: giotruc?.gioTruc,
       gioTrucId: giotruc?.id,
       tienKham: giotruc?.lichTruc.bacSi.giaKham,
-      hoSoId: hoso.id,
+      hoSoId: this.hoSo.id,
+      ten: this.hoSo,
     };
 
     // Thêm vào mảng lichkhamData
@@ -101,13 +114,13 @@ export class LichkhamComponent implements OnInit {
     // Gửi mảng lichKhamIds lên server
     this.lichKhamService.createListLichKham(lichKhamIds).subscribe({
       next: (data) => {
-        this.toastr.success("Đăng ký lich khám thành công")
+        this.toastr.success('Đăng ký lich khám thành công');
         // Xử lý thành công
         // Clear lichkhamData và cập nhật lại trạng thái của component
-        this.router.navigate(['/nguoidung/home'])
+        this.router.navigate(['/nguoidung/home']);
       },
       error: (error) => {
-        this.toastr.error("Có lỗi! Hãy đăng ký lại")
+        this.toastr.error('Có lỗi! Hãy đăng ký lại');
       },
     });
   }
