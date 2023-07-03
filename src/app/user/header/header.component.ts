@@ -43,6 +43,6 @@ export class HeaderComponent {
 
   logout(): void {
     this.storageService.signOut();
-    window.location.reload();
+   this.router.navigate(['/dangnhap']);
   }
 }

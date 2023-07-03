@@ -13,7 +13,7 @@ export class HoSoService {
     return this.http.get(`${API_URL}/hoso`);
   }
   getHoSoOfUser(id: any): Observable<any> {
-    return this.http.get(`${API_URL}/hoso/${id}`);
+    return this.http.get(`${API_URL}/hoso/user/${id}`);
   }
   saveHoSo(data: any): Observable<any> {
     return this.http.post(`${API_URL}/hoso`, data);

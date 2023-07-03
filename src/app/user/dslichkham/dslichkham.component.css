@@ -1,0 +1,64 @@
+/* Áp dụng một số kiểu cho các phần tử */
+mat-card {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+mat-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+  background-color: #15c5c5;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Tuỳ chỉnh các cột trong bảng */
+.mat-column-index {
+  width: 50px;
+}
+
+.mat-column-benhvien {
+  width: 150px;
+}
+
+.mat-column-chuyenkhoa {
+  width: 150px;
+}
+
+.mat-column-bacsi {
+  width: 150px;
+}
+mat-toolbar{
+  margin-top: 50px;
+}
+.mat-column-ngaykham {
+  width: 120px;
+}
+
+.mat-column-giokham {
+  width: 100px;
+}
+
+.mat-column-giakham {
+  width: 100px;
+}

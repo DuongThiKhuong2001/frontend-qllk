@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 
 const USER_KEY = 'auth-user';
@@ -9,9 +10,6 @@ const USER_KEY = 'auth-user';
 export class StorageService {
   constructor(private cookieService: CookieService) {}
 
-  clean(): void {
-    this.cookieService.delete(USER_KEY);
-  }
 
   public saveUser(user: any): void {
     this.cookieService.delete(USER_KEY);
@@ -32,7 +30,7 @@ export class StorageService {
   }
 
   public signOut(): void {
-    this.cookieService.delete(USER_KEY);
+    this.cookieService.deleteAll();
   }
   // Lưu đối tượng vào session dưới dạng JSON
   public saveToSession(key: string, data: any) {

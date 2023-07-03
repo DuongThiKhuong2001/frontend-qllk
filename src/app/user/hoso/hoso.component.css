@@ -8,14 +8,10 @@ mat-toolbar{
   max-height: 500px;
 }
 mat-card {
-  flex: 0 0 calc(33.33% - 20px);
   margin: 20px;
   border: 1px solid #0e74b8;
   border-radius: 4px;
   max-width: 500px;
-  
-
-
 
 }
 

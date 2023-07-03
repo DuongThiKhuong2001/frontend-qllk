@@ -9,13 +9,13 @@ import { TestComponent } from './admin/test/test.component';
 import { UserhomeComponent } from './user/userhome/userhome.component';
 import { AdminComponent } from './admin/AdminComponent';
 import { UserComponent } from './user/UserComponent';
-import { FooterComponent } from './user/footer/footer.component';
 import { HosoComponent } from './user/hoso/hoso.component';
 import { CosoyteComponent } from './user/cosoyte/cosoyte.component';
 import { ChuyenkhoaComponent } from './user/chuyenkhoa/chuyenkhoa.component';
 import { BacsiComponent } from './user/basi/basi.component';
 import { LichkhamComponent } from './user/lichkham/lichkham.component';
 import { LichTrucComponent} from './user/lichtruc/lichtruc.component';
+import { DslichkhamComponent } from './user/dslichkham/dslichkham.component';
 const routes: Routes = [
   {
     path: '',
@@ -47,6 +47,7 @@ const routes: Routes = [
       { path: 'bacsi/:id', component: BacsiComponent },
       { path: 'lichkham', component: LichkhamComponent },
       { path: 'lichtruc/:id', component: LichTrucComponent },
+      { path: 'dslichkham', component: DslichkhamComponent },
     ],
   },
 
@@ -61,7 +62,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'top', 
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

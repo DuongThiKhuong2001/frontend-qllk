@@ -1,4 +1,3 @@
-
 import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -35,8 +34,8 @@ import { ChuyenkhoaComponent } from './user/chuyenkhoa/chuyenkhoa.component';
 import { BacsiComponent } from './user/basi/basi.component';
 import { LichkhamComponent } from './user/lichkham/lichkham.component';
 import { LichTrucComponent } from './user/lichtruc/lichtruc.component';
-
-
+import { DslichkhamComponent } from './user/dslichkham/dslichkham.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -61,7 +60,8 @@ import { LichTrucComponent } from './user/lichtruc/lichtruc.component';
     ChuyenkhoaComponent,
     BacsiComponent,
     LichkhamComponent,
-    LichTrucComponent
+    LichTrucComponent,
+    DslichkhamComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,11 +72,15 @@ import { LichTrucComponent } from './user/lichtruc/lichtruc.component';
     FormsModule,
     HttpClientModule,
     ToastrModule.forRoot({
-      timeOut: 1500, // Thiết lập thời gian tồn tại là 1,5 giây
+      timeOut: 1500,
+      preventDuplicates: true,
+      countDuplicates: true,
     }),
+
     CommonModule,
     CarouselModule,
     MatTabsModule,
+    RouterModule,
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],

@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LocationService } from 'src/app/_services/location.service';
 import { HoSoService } from 'src/app/_services/hoso.service';
 import { StorageService } from 'src/app/_services/storage.service';
+import { Toast, ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hoso-form',
@@ -21,7 +23,9 @@ export class FormdesignComponent implements OnInit {
     private formBuilder: FormBuilder,
     private hoSoService: HoSoService,
     private storageService: StorageService,
-    private locationService: LocationService
+    private locationService: LocationService,
+    private toastr: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -101,17 +105,12 @@ export class FormdesignComponent implements OnInit {
       diaChi: `${diaChi}, ${xa}, ${huyen}, ${tinh}`,
     };
     this.hoSoService.saveHoSo(hoSoRequest).subscribe((res) => {
-      console.log('HoSo created successfully.');
+      this.router.navigate(['nguoidung/hoso']);
+      this.toastr.success('Tạo hồ sơ thành công');
     });
   }
 
   clearForm() {
     this.customerform.reset();
   }
-
-  showForm() {
-    // Xử lý hiển thị form
-  }
-
-
 }

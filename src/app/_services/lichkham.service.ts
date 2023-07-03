@@ -28,7 +28,7 @@ export class LichKhamService {
   deleteLichKham(id: number): Observable<any> {
     return this.http.delete(`${API_URL}/lichkham/${id}`);
   }
-  getLKByBS(id: any): Observable<any> {
-    return this.http.get(`${API_URL}/lichkham/bacsi/${id}`);
+  getHSLKbyUser(id: any): Observable<any> {
+    return this.http.get(`${API_URL}/lichkham/user/${id}`);
   }
 }

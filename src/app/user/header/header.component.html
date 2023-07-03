@@ -17,16 +17,14 @@
     <button  mat-button routerLink="bacsi" [class.checked]="isBacSiActive" (click)="setActiveButton('bacSi')">
       Bác sĩ
     </button>
-
     <span class="toolbar-spacer"></span>
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Toggle navigation">
       <mat-icon>menu</mat-icon>
-
     </button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item routerLink="/hoso">Hồ sơ</button>
+  <button mat-menu-item routerLink="/nguoidung/dslichkham">Lịch sử đặt lịch</button>
   <button mat-menu-item routerLink="/thongbao">Thông báo</button>
-  <button mat-menu-item routerLink="/doimatkhau">Đổi mật khẩu</button>
+  <button mat-menu-item routerLink="/nguoidung/hoso">Hồ sơ</button>
   <button mat-menu-item (click)="logout()">Đăng xuất</button>
 </mat-menu>
 

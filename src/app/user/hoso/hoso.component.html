@@ -22,7 +22,7 @@
         </tr>
         <tr>
           <td class="column-name">Giới tính:</td>
-          <td>{{ hosoItem?.gioiTinh }}</td>
+          <td>{{ hosoItem?.gioiTinh? "Nam" : "Nữ" }}</td>
         </tr>
         <tr>
           <td class="column-name">Số điện thoại:</td>
@@ -89,3 +89,4 @@
 >
   Thêm hồ sơ
 </button>
+
