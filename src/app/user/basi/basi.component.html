@@ -8,16 +8,17 @@
 
 <div class="d-flex">
   <div class="card">
-  <div class="card-body text-left"> <!-- Hoặc "text-center" nếu bạn muốn canh giữa -->
-    <div class="justify-content-between">
-      <div class="card-title"><b>Thông tin khám</b></div>
+    <div class="card-body text-left">
+      <!-- Hoặc "text-center" nếu bạn muốn canh giữa -->
+      <div class="justify-content-between">
+        <div class="card-title"><b>Thông tin khám</b></div>
+      </div>
+      <div><strong>Bệnh viện:</strong></div>
+      {{ benhVien?.tenBenhVien }}
+      <div><strong>Chuyên khoa:</strong></div>
+      {{ chuyenKhoa?.tenChuyenKhoa }}
     </div>
-    <div><strong>Bệnh viện:</strong></div>
-    {{ benhVien?.tenBenhVien }}
-    <div><strong>Chuyên khoa:</strong></div>
-    {{ chuyenKhoa?.tenChuyenKhoa }}
   </div>
-</div>
 
   <div class="doctor-list">
     <h2>Vui lòng chọn bác sĩ</h2>
@@ -26,7 +27,8 @@
         <mat-card
           *ngFor="let doctor of doctors"
           (click)="chonBacsi(doctor.id)"
-          class="cell-clickable custom-card">
+          class="cell-clickable custom-card"
+        >
           <mat-card-header>
             <div mat-card-avatar class="doctor-avatar"></div>
           </mat-card-header>
@@ -34,12 +36,19 @@
             <p class="left-align" style="color: rgb(32, 53, 236)">
               <strong>{{ doctor.tenBacSi }}</strong>
             </p>
-            <p class="left-align"><strong>Địa chỉ:</strong> {{ doctor.diaChi }}</p>
+            <p class="left-align">
+              <strong>Địa chỉ:</strong> {{ doctor.diaChi }}
+            </p>
             <p class="left-align">
               <strong>Giới tính:</strong> {{ doctor.gioiTinh ? "Nam" : "Nữ" }}
             </p>
-            <p class="left-align"><strong>Giá khám:</strong> {{ doctor.giaKham }}</p>
-            <p class="left-align"><strong>Số điện thoại:</strong> {{ doctor.soDienThoai }}</p>
+            <p class="left-align">
+              <strong>Giá khám:</strong>
+              {{ doctor.giaKham | currency : "VND" : "" : "1.0-0" }} VNĐ
+            </p>
+            <p class="left-align">
+              <strong>Số điện thoại:</strong> {{ doctor.soDienThoai }}
+            </p>
             <p class="left-align">
               <strong>Chuyên khoa:</strong>
               {{ doctor.chuyenKhoa?.tenChuyenKhoa }}

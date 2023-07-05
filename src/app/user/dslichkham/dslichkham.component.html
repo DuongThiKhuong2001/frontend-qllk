@@ -1,63 +1,65 @@
 <mat-toolbar color="primary">
-
+  <span class="toolbar-title">Lịch sử đặt lịch khám</span>
   <span class="spacer"></span>
   <button mat-icon-button>
-
+    <mat-icon>description</mat-icon>
   </button>
 </mat-toolbar>
-<mat-card>
-  <mat-card-title>Lịch sử đặt lịch khám</mat-card-title>
-  <mat-card-content>
-    <table mat-table [dataSource]="lichKhamList">
-      <ng-container matColumnDef="index">
-        <th mat-header-cell *matHeaderCellDef>STT</th>
-        <td mat-cell *matCellDef="let lichKham; let i = index">{{ i + 1 }}</td>
-      </ng-container>
-      <ng-container matColumnDef="benhvien">
-        <th mat-header-cell *matHeaderCellDef>Bệnh viện</th>
-        <td mat-cell *matCellDef="let lichKham">
-          {{ lichKham?.gioTruc.lichTruc.bacSi.chuyenKhoa.benhVien.tenBenhVien }}
-        </td>
-      </ng-container>
-      <ng-container matColumnDef="chuyenkhoa">
-        <th mat-header-cell *matHeaderCellDef>Chuyên khoa</th>
-        <td mat-cell *matCellDef="let lichKham">
-          {{ lichKham?.gioTruc.lichTruc.bacSi.chuyenKhoa.tenChuyenKhoa }}
-        </td>
-      </ng-container>
-      <ng-container matColumnDef="bacsi">
-        <th mat-header-cell *matHeaderCellDef>Bác sĩ</th>
-        <td mat-cell *matCellDef="let lichKham">
-          {{ lichKham?.gioTruc.lichTruc.bacSi.tenBacSi }}
-        </td>
-      </ng-container>
-      <ng-container matColumnDef="ngaykham">
-        <th mat-header-cell *matHeaderCellDef>Ngày khám</th>
-        <td mat-cell *matCellDef="let lichKham">
-          {{ lichKham?.gioTruc.lichTruc.ngayTruc  | date : "dd/MM/yyyy"  }}
-        </td>
-      </ng-container>
-      <ng-container matColumnDef="giokham">
-        <th mat-header-cell *matHeaderCellDef>Giờ khám</th>
-        <td mat-cell *matCellDef="let lichKham">
-          {{ lichKham?.gioTruc.gioTruc }}
-        </td>
-      </ng-container>
-      <ng-container matColumnDef="giakham">
-        <th mat-header-cell *matHeaderCellDef>Giá khám</th>
-        <td mat-cell *matCellDef="let lichKham">
-          {{ lichKham?.gioTruc.lichTruc.bacSi.giaKham }}
-        </td>
-      </ng-container>
-      <ng-container matColumnDef="ten">
-        <th mat-header-cell *matHeaderCellDef>ten</th>
-        <td mat-cell *matCellDef="let lichKham">
-          {{ lichKham?.hoSo.ten }}
-        </td>
-      </ng-container>
+<div class="container">
+  <mat-card *ngFor="let lichKham of lichKhamList">
+    <mat-card-title>Phiếu khám bệnh</mat-card-title>
+    <mat-card-content>
+      <table mat-table [dataSource]="[lichKham]" class="table">
+        <ng-container matColumnDef="index">
+          <th mat-header-cell *matHeaderCellDef>STT</th>
+          <td mat-cell *matCellDef="let lichKham; let i = index">{{ i + 1 }}</td>
+        </ng-container>
+         <ng-container matColumnDef="ten">
+          <th mat-header-cell *matHeaderCellDef>Tên</th>
+          <td mat-cell *matCellDef="let lichKham">
+            {{ lichKham?.hoSo.ten }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="benhvien">
+          <th mat-header-cell *matHeaderCellDef>Bệnh viện</th>
+          <td mat-cell *matCellDef="let lichKham">
+            {{ lichKham?.gioTruc.lichTruc.bacSi.chuyenKhoa.benhVien.tenBenhVien }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="chuyenkhoa">
+          <th mat-header-cell *matHeaderCellDef>Chuyên khoa</th>
+          <td mat-cell *matCellDef="let lichKham">
+            {{ lichKham?.gioTruc.lichTruc.bacSi.chuyenKhoa.tenChuyenKhoa }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="bacsi">
+          <th mat-header-cell *matHeaderCellDef>Bác sĩ</th>
+          <td mat-cell *matCellDef="let lichKham">
+            {{ lichKham?.gioTruc.lichTruc.bacSi.tenBacSi }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="ngaykham">
+          <th mat-header-cell *matHeaderCellDef>Ngày khám</th>
+          <td mat-cell *matCellDef="let lichKham">
+            {{ lichKham?.gioTruc.lichTruc.ngayTruc | date: 'dd/MM/yyyy' }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="giokham">
+          <th mat-header-cell *matHeaderCellDef>Giờ khám</th>
+          <td mat-cell *matCellDef="let lichKham">
+            {{ lichKham?.gioTruc.gioTruc }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="giakham">
+          <th mat-header-cell *matHeaderCellDef>Giá khám</th>
+          <td mat-cell *matCellDef="let lichKham">
+            {{ lichKham?.gioTruc.lichTruc.bacSi.giaKham }}
+          </td>
+        </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    </table>
-  </mat-card-content>
-</mat-card>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>

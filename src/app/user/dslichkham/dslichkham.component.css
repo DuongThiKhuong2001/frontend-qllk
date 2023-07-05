@@ -1,64 +1,62 @@
-/* Áp dụng một số kiểu cho các phần tử */
-mat-card {
-  margin: 20px;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.container {
+  height: 400px; /* Chiều cao cố định */
+  overflow-y: scroll; /* Cuộn dọc */
 }
 
-mat-card-title {
-  font-size: 24px;
-  font-weight: bold;
+.vertical-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.vertical-table th,
+.vertical-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.vertical-table th {
+  background-color: #f2f2f2;
+}
+
+.vertical-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+
+/* .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+mat-card {
+  width: 48%;
   margin-bottom: 20px;
 }
 
-table {
+.table {
   width: 100%;
   border-collapse: collapse;
 }
 
 th,
 td {
-  padding: 10px;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
   text-align: left;
 }
 
 th {
+  background-color: #f5f5f5;
+}
+
+.mat-card-title {
+  font-size: 20px;
   font-weight: bold;
-  background-color: #15c5c5;
+  margin-bottom: 16px;
 }
 
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-/* Tuỳ chỉnh các cột trong bảng */
-.mat-column-index {
-  width: 50px;
-}
-
-.mat-column-benhvien {
-  width: 150px;
-}
-
-.mat-column-chuyenkhoa {
-  width: 150px;
-}
-
-.mat-column-bacsi {
-  width: 150px;
-}
-mat-toolbar{
+mat-toolbar {
   margin-top: 50px;
-}
-.mat-column-ngaykham {
-  width: 120px;
-}
-
-.mat-column-giokham {
-  width: 100px;
-}
-
-.mat-column-giakham {
-  width: 100px;
-}
+} */

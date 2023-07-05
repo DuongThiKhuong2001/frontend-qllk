@@ -29,7 +29,7 @@
               <td>{{ lichkhamItem?.tenBacSi }}</td>
               <td>{{ lichkhamItem?.ngayTruc | date : "dd/MM/yyyy" }}</td>
               <td>{{ lichkhamItem?.gioTruc }}</td>
-              <td>{{ lichkhamItem?.tienKham }}</td>
+              <td>{{ lichkhamItem?.tienKham | currency : "VND" : "" : "1.0-0" }} VNĐ</td>
               <td>
                 <button
                   class="icon-button delete-button"
@@ -79,7 +79,7 @@
             <tr>
               <td>{{ hoSo?.ten }}</td>
               <td>{{ hoSo?.ngaySinh | date : "dd/MM/yyyy" }}</td>
-              <td>{{ hoSo?.gioiTinh }}</td>
+              <td>{{ hoSo?.gioiTinh?"Nam" : "Nữ" }}</td>
               <td>{{ hoSo?.soDienThoai }}</td>
               <td>{{ hoSo?.ngheNghiep }}</td>
               <td>{{ hoSo?.cmnd }}</td>
